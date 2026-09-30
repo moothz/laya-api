@@ -103,6 +103,7 @@ A API conta com interface Swagger UI para visualização e testes interativos de
 | `LAYA_MAX_LOADED` | Limite de modelos de texto mantidos residentes em VRAM. | `1` |
 | `LAYA_ENABLE_VISION` | Habilita motor de visão zero-shot (`1` ou `0`). | `1` |
 | `LAYA_VISION_MODEL` | Modelo de visão Hugging Face. | `google/siglip-base-patch16-224` |
+| `MAX_UPLOAD_SIZE_MB` | Limite de tamanho máximo para imagens Base64 e uploads (MB). | `50` |
 | `LAYA_THREADS` | Threads internas do PyTorch por worker na CPU. | `4` |
 | `WORKERS` | Quantidade de processos worker Uvicorn (modo CPU). | `4` |
 | `HF_HOME` | Diretório de cache de modelos Hugging Face. | `/mnt/data/services/laya/cache` |
@@ -141,45 +142,13 @@ curl -X POST http://localhost:8002/predict \
   }'
 ```
 
-**Exemplo de Resposta:**
-
-```json
-{
-  "answers": {
-    "departamento": "financeiro",
-    "urgencia": "crítica"
-  },
-  "confidence": {
-    "departamento": 0.9821,
-    "urgencia": 0.8954
-  },
-  "probabilities": {
-    "departamento": {
-      "financeiro": 0.9821,
-      "suporte_tecnico": 0.0125,
-      "outros": 0.0054
-    },
-    "urgencia": {
-      "baixa": 0.0152,
-      "média": 0.0894,
-      "crítica": 0.8954
-    }
-  },
-  "routing": {
-    "model": "multilingual",
-    "device": "cuda:0",
-    "engine_timing_ms": 8.12
-  }
-}
-```
-
 ---
 
-### 2. `POST /predict/image` (Classificação Zero-Shot de Imagem)
+### 2. `POST /predict/image` (Classificação Zero-Shot de Imagem via JSON)
 
 Classifica uma imagem a partir de **URL**, **Base64** ou **caminho local**.
 
-**Exemplo de Requisição (com URL ou Base64):**
+**Opção A: Envio via URL:**
 
 ```bash
 curl -X POST http://localhost:8002/predict/image \
@@ -199,6 +168,27 @@ curl -X POST http://localhost:8002/predict/image \
       "legivel": {
         "type": "noul",
         "instructions": "O documento está legível e nítido?"
+      }
+    }
+  }'
+```
+
+**Opção B: Envio via Base64 (Data URI ou raw string):**
+
+```bash
+curl -X POST http://localhost:8002/predict/image \
+  -H "Content-Type: application/json" \
+  -d '{
+    "image_base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD...",
+    "questions": {
+      "categoria": {
+        "type": "choice",
+        "instructions": "Qual é o tema principal desta imagem?",
+        "criteria": {
+          "futebol": "jogadores em campo ou partida de futebol",
+          "gato": "gato ou felino doméstico",
+          "documento": "recibo ou documento impresso"
+        }
       }
     }
   }'
@@ -240,9 +230,9 @@ curl -X POST http://localhost:8002/predict/image \
 
 ---
 
-### 3. `POST /predict/image/upload` (Upload de Imagem Multipart)
+### 3. `POST /predict/image/upload` (Upload Direto Form-Data / Multipart)
 
-Envie diretamente arquivos de imagem binários (PNG, JPEG, WebP):
+Envie diretamente arquivos de imagem binários (PNG, JPEG, WebP) de até 50MB:
 
 ```bash
 curl -X POST http://localhost:8002/predict/image/upload \

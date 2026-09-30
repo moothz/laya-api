@@ -79,7 +79,7 @@ class LayaTextEngine:
             for model_name in self.preload_models:
                 try:
                     logger.info(f"Preloading text model '{model_name}' on {self.device_str}...")
-                    agent = self.router.get(model_name)
+                    agent = self.router.load(model_name)
                     if self.device.type == "cuda" and self.dtype in (torch.bfloat16, torch.float16):
                         # Convert model weights directly to half precision on GPU
                         agent.model.to(dtype=self.dtype)

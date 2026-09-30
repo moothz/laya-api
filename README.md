@@ -194,55 +194,78 @@ curl -X POST http://localhost:8002/predict/image \
   }'
 ```
 
-**Exemplo de Resposta:**
-
-```json
-{
-  "results": {
-    "tipo_documento": {
-      "answer": "recibo_fiscal",
-      "confidence": 0.9742,
-      "probabilities": {
-        "recibo_fiscal": 0.9742,
-        "documento_identidade": 0.0185,
-        "foto_natureza": 0.0073
-      },
-      "type": "choice"
-    },
-    "legivel": {
-      "answer": true,
-      "confidence": 0.9412,
-      "probabilities": {
-        "false": 0.0588,
-        "true": 0.9412
-      },
-      "type": "noul"
-    }
-  },
-  "routing": {
-    "model": "google/siglip-base-patch16-224",
-    "device": "cuda:0",
-    "timing_ms": 7.84,
-    "questions_evaluated": 2
-  }
-}
-```
-
----
-
-### 3. `POST /predict/image/upload` (Upload Direto Form-Data / Multipart)
-
-Envie diretamente arquivos de imagem binários (PNG, JPEG, WebP) de até 50MB:
+**Opção C: Envio de Múltiplas Imagens (`images` array, até 5 imagens):**
 
 ```bash
-curl -X POST http://localhost:8002/predict/image/upload \
-  -F "file=@/caminho/minha_foto.jpg" \
-  -F 'questions={"categoria": {"type": "choice", "instructions": "Classifique a imagem", "criteria": {"documento": "texto impresso", "pessoa": "rosto ou pessoa"}}}'
+curl -X POST http://localhost:8002/predict/image \
+  -H "Content-Type: application/json" \
+  -d '{
+    "images": [
+      "https://example.com/frame1.jpg",
+      "https://example.com/frame2.jpg",
+      "https://example.com/frame3.jpg"
+    ],
+    "aggregation": "mean",
+    "questions": {
+      "tema": {
+        "type": "choice",
+        "instructions": "Qual é o tema principal?",
+        "criteria": {"futebol": "futebol", "outros": "outros temas"}
+      }
+    }
+  }'
 ```
 
 ---
 
-### 4. `GET /health` (Telemetria de VRAM e Saúde)
+### 3. `POST /predict/video` (Classificação de Vídeo MP4 / WebM / WebP Animado)
+
+Extrai uniformemente **5 frames** (configurável via `num_frames`) e realiza inferência paralela em lote com agregação temporal (`mean` ou `max`):
+
+```bash
+curl -X POST http://localhost:8002/predict/video \
+  -H "Content-Type: application/json" \
+  -d '{
+    "video_url": "https://example.com/lance_futebol.mp4",
+    "num_frames": 5,
+    "aggregation": "max",
+    "questions": {
+      "acontecimento": {
+        "type": "choice",
+        "instructions": "O que acontece neste vídeo?",
+        "criteria": {
+          "gol_ou_comemoracao": "gol marcado, jogadores comemorando ou bola na rede",
+          "falta_ou_cartao": "falta, árbitro apitando ou cartão exibido",
+          "jogo_normal": "troca de passes e movimentação normal"
+        }
+      }
+    }
+  }'
+```
+
+---
+
+### 4. `POST /predict/image/upload` e `POST /predict/video/upload` (Upload Direto Form-Data)
+
+Envie diretamente arquivos binários de imagem (JPEG, PNG, WebP) ou vídeo (MP4, WebM, MOV):
+
+```bash
+# Upload de Imagem ou WebP animado
+curl -X POST http://localhost:8002/predict/image/upload \
+  -F "file=@/caminho/minha_foto.webp" \
+  -F 'questions={"categoria": {"type": "choice", "instructions": "Classifique", "criteria": {"doc": "documento", "pessoa": "pessoa"}}}'
+
+# Upload de Vídeo MP4
+curl -X POST http://localhost:8002/predict/video/upload \
+  -F "file=@/caminho/meu_video.mp4" \
+  -F "num_frames=5" \
+  -F "aggregation=mean" \
+  -F 'questions={"esporte": {"type": "choice", "instructions": "Qual esporte?", "criteria": {"futebol": "partida de futebol", "basquete": "basquete"}}}'
+```
+
+---
+
+### 5. `GET /health` (Telemetria de VRAM e Saúde)
 
 ```bash
 curl -s http://localhost:8002/health | python -m json.tool

@@ -1,4 +1,4 @@
-"""Laya API Server: High-Performance Decision Engine for Text & Vision."""
+"""Laya API Server: High-Performance Decision Engine for Text, Vision & Video."""
 
 from __future__ import annotations
 
@@ -33,11 +33,14 @@ logger = logging.getLogger("laya.api")
 text_engine: Optional[LayaTextEngine] = None
 vision_engine: Optional[LayaVisionEngine] = None
 
+MAX_UPLOAD_SIZE_MB = int(os.getenv("MAX_UPLOAD_SIZE_MB", "50"))
+MAX_UPLOAD_BYTES = MAX_UPLOAD_SIZE_MB * 1024 * 1024
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global text_engine, vision_engine
-    
+
     device = os.getenv("LAYA_DEVICE", "cuda" if torch.cuda.is_available() else "cpu")
     cpu_threads = int(os.getenv("LAYA_THREADS", "4"))
     enable_vision = os.getenv("LAYA_ENABLE_VISION", "1").lower() not in ("0", "false", "no")
@@ -67,8 +70,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Laya Decision Engine API",
-    version="1.0.0",
-    description="API de alta performance para tomada de decisão e classificação de Texto (Laya) e Imagem (SigLIP Zero-Shot).",
+    version="1.1.0",
+    description="API de alta performance para tomada de decisão e classificação de Texto (Laya), Imagem e Vídeo (SigLIP Zero-Shot).",
     lifespan=lifespan,
 )
 
@@ -98,7 +101,7 @@ class Question(BaseModel):
 class PredictRequest(BaseModel):
     state: Union[str, Dict[str, Any], List[Any]] = Field(
         ...,
-        description="Texto ou registro estruturado a ser classificado. Se contiver 'image_url' ou 'image_base64', o motor de visão é utilizado automaticamente.",
+        description="Texto ou registro a ser classificado. Se contiver 'image_url', 'image_base64' ou 'video_url', o motor de visão é utilizado automaticamente.",
     )
     questions: Dict[str, Question] = Field(..., min_length=1, description="Dicionário de perguntas")
     model: Optional[str] = Field(default=None, description="Override de modelo (ex: 'multilingual', 'english')")
@@ -117,11 +120,24 @@ class BatchRequest(BaseModel):
 
 
 class PredictImageRequest(BaseModel):
-    image_url: Optional[str] = Field(default=None, description="URL pública da imagem (HTTP/HTTPS)")
+    image_url: Optional[str] = Field(default=None, description="URL pública da imagem ou WebP animado (HTTP/HTTPS)")
     image_base64: Optional[str] = Field(default=None, description="String da imagem codificada em Base64 ou Data URI")
     image_path: Optional[str] = Field(default=None, description="Caminho local da imagem no servidor")
+    images: Optional[List[str]] = Field(default=None, description="Lista de até 5 imagens (URLs, Base64 ou caminhos)")
+    num_frames: Optional[int] = Field(default=5, ge=1, le=16, description="Quantidade de frames a extrair se for imagem animada (WebP/GIF)")
+    aggregation: Optional[str] = Field(default="mean", description="Método de agregação multi-frame: 'mean' (média) ou 'max' (detecção)")
     state: Optional[Union[str, Dict[str, Any]]] = Field(default=None, description="Metadados adicionais ou texto complementar")
     questions: Dict[str, Question] = Field(..., min_length=1, description="Dicionário de perguntas para a imagem")
+
+
+class PredictVideoRequest(BaseModel):
+    video_url: Optional[str] = Field(default=None, description="URL pública do vídeo (MP4, WebM, MOV)")
+    video_base64: Optional[str] = Field(default=None, description="String do vídeo codificada em Base64 ou Data URI")
+    video_path: Optional[str] = Field(default=None, description="Caminho local do vídeo no servidor")
+    num_frames: Optional[int] = Field(default=5, ge=1, le=16, description="Quantidade de frames a extrair ao longo do vídeo (padrão 5)")
+    aggregation: Optional[str] = Field(default="mean", description="Método de agregação temporal: 'mean' (consenso) ou 'max' (detecção de evento)")
+    state: Optional[Union[str, Dict[str, Any]]] = Field(default=None, description="Metadados adicionais")
+    questions: Dict[str, Question] = Field(..., min_length=1, description="Dicionário de perguntas para o vídeo")
 
 
 def _questions_to_dict(questions: Dict[str, Question]) -> Dict[str, Any]:
@@ -162,6 +178,7 @@ def health():
             "ready": vision_engine is not None,
             "model": getattr(vision_engine, "model_id", None),
             "dtype": str(getattr(vision_engine, "dtype", "unknown")),
+            "supports": ["static_image", "multi_image", "animated_webp", "animated_gif", "mp4_video", "webm_video"],
         },
     }
 
@@ -189,15 +206,26 @@ def predict(req: PredictRequest):
     if text_engine is None:
         raise HTTPException(status_code=503, detail="Serviço Laya ainda está inicializando.")
 
-    # Check if state represents an image request
+    # Check if state represents a visual / video request
     if isinstance(req.state, dict) and vision_engine is not None:
-        img_input = req.state.get("image_url") or req.state.get("image_base64") or req.state.get("image") or req.state.get("image_path")
+        img_input = (
+            req.state.get("image_url")
+            or req.state.get("image_base64")
+            or req.state.get("image")
+            or req.state.get("image_path")
+            or req.state.get("images")
+            or req.state.get("video_url")
+            or req.state.get("video_base64")
+            or req.state.get("video_path")
+        )
         if img_input:
             try:
-                return vision_engine.predict_image(img_input, _questions_to_dict(req.questions))
+                num_frames = int(req.state.get("num_frames", 5))
+                agg = str(req.state.get("aggregation", "mean"))
+                return vision_engine.predict_media(img_input, _questions_to_dict(req.questions), num_frames=num_frames, aggregation=agg)
             except Exception as e:
-                logger.exception("Falha na predição de imagem via /predict")
-                raise HTTPException(status_code=400, detail=f"Falha no processamento de imagem: {str(e)}")
+                logger.exception("Falha na predição visual via /predict")
+                raise HTTPException(status_code=400, detail=f"Falha no processamento visual: {str(e)}")
 
     try:
         return text_engine.predict(
@@ -236,21 +264,23 @@ def predict_batch(req: BatchRequest):
 
 @app.post("/predict/image")
 def predict_image(req: PredictImageRequest):
-    """Classificação Zero-Shot de imagens (URL, Base64 ou Caminho local)."""
+    """Classificação Zero-Shot de imagens, múltiplas imagens ou WebP/GIF animados."""
     if vision_engine is None:
         raise HTTPException(status_code=503, detail="Motor de visão não está habilitado ou falhou na inicialização.")
 
-    image_source = req.image_url or req.image_base64 or req.image_path
+    image_source = req.images or req.image_url or req.image_base64 or req.image_path
     if not image_source:
         raise HTTPException(
             status_code=422,
-            detail="Informe ao menos uma fonte de imagem: 'image_url', 'image_base64' ou 'image_path'.",
+            detail="Informe ao menos uma fonte de imagem: 'image_url', 'image_base64', 'image_path' ou 'images'.",
         )
 
     try:
-        return vision_engine.predict_image(
-            image_input=image_source,
+        return vision_engine.predict_media(
+            media_input=image_source,
             questions=_questions_to_dict(req.questions),
+            num_frames=req.num_frames or 5,
+            aggregation=req.aggregation or "mean",
         )
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve))
@@ -259,16 +289,41 @@ def predict_image(req: PredictImageRequest):
         raise HTTPException(status_code=500, detail=f"Erro ao processar imagem: {str(e)}")
 
 
-MAX_UPLOAD_SIZE_MB = int(os.getenv("MAX_UPLOAD_SIZE_MB", "50"))
-MAX_UPLOAD_BYTES = MAX_UPLOAD_SIZE_MB * 1024 * 1024
+@app.post("/predict/video")
+def predict_video(req: PredictVideoRequest):
+    """Classificação Zero-Shot de vídeo (MP4, WebM, MOV) com amostragem uniforme de frames."""
+    if vision_engine is None:
+        raise HTTPException(status_code=503, detail="Motor de visão não está habilitado ou falhou na inicialização.")
+
+    video_source = req.video_url or req.video_base64 or req.video_path
+    if not video_source:
+        raise HTTPException(
+            status_code=422,
+            detail="Informe ao menos uma fonte de vídeo: 'video_url', 'video_base64' ou 'video_path'.",
+        )
+
+    try:
+        return vision_engine.predict_media(
+            media_input=video_source,
+            questions=_questions_to_dict(req.questions),
+            num_frames=req.num_frames or 5,
+            aggregation=req.aggregation or "mean",
+        )
+    except ValueError as ve:
+        raise HTTPException(status_code=400, detail=str(ve))
+    except Exception as e:
+        logger.exception("Falha na classificação do vídeo")
+        raise HTTPException(status_code=500, detail=f"Erro ao processar vídeo: {str(e)}")
 
 
 @app.post("/predict/image/upload")
 async def predict_image_upload(
-    file: UploadFile = File(..., description="Arquivo de imagem (JPEG, PNG, WebP)"),
+    file: UploadFile = File(..., description="Arquivo de imagem ou WebP/GIF animado (JPEG, PNG, WebP, GIF)"),
     questions: str = Form(..., description="JSON string contendo o dicionário de perguntas"),
+    num_frames: int = Form(5, description="Quantidade de frames a extrair se for animado (padrão 5)"),
+    aggregation: str = Form("mean", description="Agregação multi-frame ('mean' ou 'max')"),
 ):
-    """Classificação de imagem enviada via Upload Multipart/Form-Data."""
+    """Classificação de imagem ou animação enviada via Upload Multipart/Form-Data."""
     if vision_engine is None:
         raise HTTPException(status_code=503, detail="Motor de visão não está habilitado.")
 
@@ -284,12 +339,50 @@ async def predict_image_upload(
                 status_code=413,
                 detail=f"Arquivo excede o tamanho máximo permitido ({len(content)/(1024*1024):.1f}MB > {MAX_UPLOAD_SIZE_MB}MB).",
             )
-        return vision_engine.predict_image(
-            image_input=content,
+        return vision_engine.predict_media(
+            media_input=content,
             questions=questions_dict,
+            num_frames=num_frames,
+            aggregation=aggregation,
         )
     except HTTPException:
         raise
     except Exception as e:
         logger.exception("Falha no upload e predição de imagem")
         raise HTTPException(status_code=500, detail=f"Erro ao classificar upload: {str(e)}")
+
+
+@app.post("/predict/video/upload")
+async def predict_video_upload(
+    file: UploadFile = File(..., description="Arquivo de vídeo (MP4, WebM, MOV, AVI)"),
+    questions: str = Form(..., description="JSON string contendo o dicionário de perguntas"),
+    num_frames: int = Form(5, description="Quantidade de frames a extrair (padrão 5)"),
+    aggregation: str = Form("mean", description="Agregação temporal ('mean' ou 'max')"),
+):
+    """Classificação de vídeo enviado via Upload Multipart/Form-Data."""
+    if vision_engine is None:
+        raise HTTPException(status_code=503, detail="Motor de visão não está habilitado.")
+
+    try:
+        questions_dict = json.loads(questions)
+    except Exception:
+        raise HTTPException(status_code=422, detail="O campo 'questions' deve ser um JSON válido.")
+
+    try:
+        content = await file.read()
+        if len(content) > MAX_UPLOAD_BYTES:
+            raise HTTPException(
+                status_code=413,
+                detail=f"Arquivo excede o tamanho máximo permitido ({len(content)/(1024*1024):.1f}MB > {MAX_UPLOAD_SIZE_MB}MB).",
+            )
+        return vision_engine.predict_media(
+            media_input=content,
+            questions=questions_dict,
+            num_frames=num_frames,
+            aggregation=aggregation,
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("Falha no upload e predição de vídeo")
+        raise HTTPException(status_code=500, detail=f"Erro ao classificar vídeo: {str(e)}")

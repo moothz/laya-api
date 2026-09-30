@@ -1,4 +1,4 @@
-"""Laya API Engine: Optimized Text (Laya) & Vision (SigLIP/CLIP) Decision Engines."""
+"""Laya API Engine: Optimized Text (Laya) & Vision/Video (SigLIP/CLIP) Decision Engines."""
 
 from __future__ import annotations
 
@@ -64,7 +64,7 @@ class LayaTextEngine:
 
         # Import laya components
         import laya
-        from laya import Router, Agent
+        from laya import Router
 
         # Build router with custom parameters
         self.router = Router(
@@ -130,7 +130,7 @@ class LayaTextEngine:
 
 
 class LayaVisionEngine:
-    """Zero-shot visual question answering and image classification engine using SigLIP / CLIP."""
+    """Zero-shot visual and video question answering engine using SigLIP / CLIP with multi-frame batching."""
 
     def __init__(
         self,
@@ -154,7 +154,7 @@ class LayaVisionEngine:
             self.dtype = torch.float32
 
         logger.info(f"Loading Vision Engine with model '{self.model_id}' on {self.device_str} ({self.dtype})...")
-        
+
         from transformers import AutoProcessor, AutoModel
         self.processor = AutoProcessor.from_pretrained(self.model_id)
         self.model = AutoModel.from_pretrained(self.model_id, torch_dtype=self.dtype)
@@ -165,52 +165,114 @@ class LayaVisionEngine:
             allocated_mb = torch.cuda.memory_allocated() / (1024 * 1024)
             logger.info(f"LayaVisionEngine ready. Cumulative VRAM: {allocated_mb:.2f} MB")
 
-    @staticmethod
-    def load_image(image_input: Union[str, bytes, Image.Image]) -> Image.Image:
-        """Load image from base64 string, URL, file path, bytes, or PIL.Image."""
-        if isinstance(image_input, Image.Image):
-            return image_input.convert("RGB")
+    @classmethod
+    def _load_raw_bytes(cls, input_data: Union[str, bytes]) -> bytes:
+        """Fetch or decode raw bytes from URL, base64, or local file."""
+        if isinstance(input_data, bytes):
+            return input_data
 
-        if isinstance(image_input, bytes):
-            return Image.open(io.BytesIO(image_input)).convert("RGB")
+        input_str = input_data.strip()
 
-        if isinstance(image_input, str):
-            image_str = image_input.strip()
+        # Case 1: Base64
+        if input_str.startswith("data:") or ";base64," in input_str:
+            base64_data = input_str.split(";base64,")[-1]
+            return base64.b64decode(base64_data)
 
-            # Case 1: Base64 data URI or raw base64
-            if image_str.startswith("data:image/") or ";base64," in image_str:
-                base64_data = image_str.split(";base64,")[-1]
-                image_bytes = base64.b64decode(base64_data)
-                return Image.open(io.BytesIO(image_bytes)).convert("RGB")
-            
-            # Check if likely raw base64 without prefix (length > 100, no newlines/urls)
-            if not image_str.startswith(("http://", "https://", "/")) and len(image_str) > 200:
-                try:
-                    image_bytes = base64.b64decode(image_str)
-                    return Image.open(io.BytesIO(image_bytes)).convert("RGB")
-                except Exception:
-                    pass
+        if not input_str.startswith(("http://", "https://", "/")) and len(input_str) > 200:
+            try:
+                return base64.b64decode(input_str)
+            except Exception:
+                pass
 
-            # Case 2: HTTP / HTTPS URL
-            if image_str.startswith(("http://", "https://")):
-                import urllib.request
-                req = urllib.request.Request(image_str, headers={"User-Agent": "LayaVision/1.0"})
-                with urllib.request.urlopen(req, timeout=15) as resp:
-                    image_bytes = resp.read()
-                return Image.open(io.BytesIO(image_bytes)).convert("RGB")
+        # Case 2: HTTP / HTTPS URL
+        if input_str.startswith(("http://", "https://")):
+            import urllib.request
+            req = urllib.request.Request(input_str, headers={"User-Agent": "LayaVision/1.0"})
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return resp.read()
 
-            # Case 3: Local file path
-            if os.path.exists(image_str):
-                return Image.open(image_str).convert("RGB")
+        # Case 3: Local file path
+        if os.path.exists(input_str):
+            with open(input_str, "rb") as f:
+                return f.read()
 
-            raise ValueError(f"Unable to load image from input (not a valid URL, file path, or base64): {image_str[:50]}...")
+        raise ValueError(f"Unable to load media source (not a valid URL, file path, or base64): {input_str[:50]}...")
 
-        raise TypeError(f"Unsupported image input type: {type(image_input)}")
+    @classmethod
+    def extract_frames(
+        cls,
+        media_input: Union[str, bytes, Image.Image, List[Any]],
+        num_frames: int = 5,
+    ) -> List[Image.Image]:
+        """Extract up to num_frames PIL Images from a static image, animated WebP/GIF, MP4/WebM video, or list of images."""
+        if isinstance(media_input, list):
+            frames: List[Image.Image] = []
+            for item in media_input[:num_frames]:
+                sub_frames = cls.extract_frames(item, num_frames=1)
+                frames.extend(sub_frames)
+            return frames if frames else [Image.new("RGB", (224, 224), color="black")]
+
+        if isinstance(media_input, Image.Image):
+            # Check if animated WebP / GIF
+            if getattr(media_input, "is_animated", False) and getattr(media_input, "n_frames", 1) > 1:
+                total = media_input.n_frames
+                step = total / num_frames
+                frames = []
+                for i in range(num_frames):
+                    idx = min(int(i * step), total - 1)
+                    media_input.seek(idx)
+                    frames.append(media_input.convert("RGB"))
+                return frames
+            return [media_input.convert("RGB")]
+
+        # Raw bytes or string
+        raw_bytes = cls._load_raw_bytes(media_input)
+
+        # First, try decoding with Pillow (covers JPEG, PNG, static/animated WebP, GIF)
+        try:
+            pil_img = Image.open(io.BytesIO(raw_bytes))
+            if getattr(pil_img, "is_animated", False) and getattr(pil_img, "n_frames", 1) > 1:
+                total = pil_img.n_frames
+                step = total / num_frames
+                frames = []
+                for i in range(num_frames):
+                    idx = min(int(i * step), total - 1)
+                    pil_img.seek(idx)
+                    frames.append(pil_img.convert("RGB"))
+                return frames
+            return [pil_img.convert("RGB")]
+        except Exception:
+            pass
+
+        # If Pillow fails, decode as video (MP4, WebM, AVI, MOV) using PyAV
+        try:
+            import av
+            container = av.open(io.BytesIO(raw_bytes))
+            video_stream = next((s for s in container.streams if s.type == "video"), None)
+            if video_stream is None:
+                raise ValueError("No video stream found in media container.")
+
+            # Decode frames
+            all_frames: List[Image.Image] = []
+            for frame in container.decode(video=0):
+                all_frames.append(frame.to_image().convert("RGB"))
+
+            if not all_frames:
+                raise ValueError("No frames could be decoded from video.")
+
+            # Uniform sampling
+            total = len(all_frames)
+            if total <= num_frames:
+                return all_frames
+
+            step = total / num_frames
+            sampled = [all_frames[min(int(i * step), total - 1)] for i in range(num_frames)]
+            return sampled
+        except Exception as e:
+            raise ValueError(f"Failed to decode media as image or video: {e}")
 
     def _render_question_candidates(self, qid: str, qdef: Dict[str, Any]) -> Tuple[List[str], List[str]]:
-        """Extract candidate labels and prompt texts for a question.
-        Returns: (labels, prompt_texts)
-        """
+        """Extract candidate labels and prompt texts for a question."""
         qtype = qdef.get("type", "choice")
         instructions = qdef.get("instructions", "")
         criteria = qdef.get("criteria")
@@ -223,7 +285,6 @@ class LayaVisionEngine:
                 for label, desc in criteria.items():
                     labels.append(str(label))
                     desc_str = str(desc) if desc else str(label)
-                    # Format candidate prompt for vision model
                     prompt = f"{instructions}: {desc_str}" if instructions else desc_str
                     prompt_texts.append(prompt)
             elif isinstance(criteria, list):
@@ -259,14 +320,16 @@ class LayaVisionEngine:
 
         return labels, prompt_texts
 
-    def predict_image(
+    def predict_media(
         self,
-        image_input: Union[str, bytes, Image.Image],
+        media_input: Union[str, bytes, Image.Image, List[Any]],
         questions: Dict[str, Any],
+        num_frames: int = 5,
+        aggregation: str = "mean",
     ) -> Dict[str, Any]:
-        """Classify image against structured question schemas."""
+        """Classify image, multi-image, animated WebP, or video against structured question schemas."""
         t0 = time.perf_counter()
-        image = self.load_image(image_input)
+        frames = self.extract_frames(media_input, num_frames=num_frames)
 
         results: Dict[str, Any] = {}
 
@@ -275,10 +338,10 @@ class LayaVisionEngine:
             if not candidate_texts:
                 continue
 
-            # Process image and texts
+            # Batch process all frames simultaneously
             inputs = self.processor(
                 text=candidate_texts,
-                images=image,
+                images=frames,
                 padding="max_length",
                 return_tensors="pt",
             ).to(self.device)
@@ -286,20 +349,33 @@ class LayaVisionEngine:
             with torch.no_grad():
                 outputs = self.model(**inputs)
                 if hasattr(outputs, "logits_per_image"):
-                    logits = outputs.logits_per_image[0]
+                    logits = outputs.logits_per_image
                 else:
-                    # Generic image-text similarity fallback
                     img_embeds = outputs.image_embeds / outputs.image_embeds.norm(dim=-1, keepdim=True)
                     txt_embeds = outputs.text_embeds / outputs.text_embeds.norm(dim=-1, keepdim=True)
-                    logits = (img_embeds @ txt_embeds.T)[0] * 100.0
+                    logits = (img_embeds @ txt_embeds.T) * 100.0
 
-                probs = torch.softmax(logits, dim=-1).cpu().float().numpy()
+                # Softmax across labels per frame -> shape [num_frames, num_labels]
+                probs_per_frame = torch.softmax(logits, dim=-1).cpu().float()
+
+                # Multi-frame aggregation
+                if aggregation.lower() == "max" or len(frames) == 1:
+                    probs_agg, _ = probs_per_frame.max(dim=0)
+                    # Normalize to sum to 1.0
+                    probs_sum = probs_agg.sum()
+                    if probs_sum > 0:
+                        probs_agg = probs_agg / probs_sum
+                else:
+                    # Default: mean pooling
+                    probs_agg = probs_per_frame.mean(dim=0)
+
+                probs_np = probs_agg.numpy()
 
             # Format distribution
-            prob_dict = {label: float(round(float(p), 4)) for label, p in zip(labels, probs)}
-            best_idx = int(probs.argmax())
+            prob_dict = {label: float(round(float(p), 4)) for label, p in zip(labels, probs_np)}
+            best_idx = int(probs_np.argmax())
             best_label = labels[best_idx]
-            confidence = float(round(float(probs[best_idx]), 4))
+            confidence = float(round(float(probs_np[best_idx]), 4))
 
             qtype = qdef.get("type", "choice")
             ans_val: Any = best_label
@@ -324,6 +400,16 @@ class LayaVisionEngine:
                 "model": self.model_id,
                 "device": str(self.device),
                 "timing_ms": timing_ms,
+                "frames_evaluated": len(frames),
+                "aggregation": aggregation,
                 "questions_evaluated": len(results),
             },
         }
+
+    # Backward compatibility alias
+    def predict_image(
+        self,
+        image_input: Union[str, bytes, Image.Image, List[Any]],
+        questions: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        return self.predict_media(image_input, questions, num_frames=5, aggregation="mean")

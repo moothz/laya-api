@@ -259,12 +259,16 @@ def predict_image(req: PredictImageRequest):
         raise HTTPException(status_code=500, detail=f"Erro ao processar imagem: {str(e)}")
 
 
+MAX_UPLOAD_SIZE_MB = int(os.getenv("MAX_UPLOAD_SIZE_MB", "50"))
+MAX_UPLOAD_BYTES = MAX_UPLOAD_SIZE_MB * 1024 * 1024
+
+
 @app.post("/predict/image/upload")
 async def predict_image_upload(
     file: UploadFile = File(..., description="Arquivo de imagem (JPEG, PNG, WebP)"),
     questions: str = Form(..., description="JSON string contendo o dicionário de perguntas"),
 ):
-    """Classificação de imagem enviada via Upload Multipart."""
+    """Classificação de imagem enviada via Upload Multipart/Form-Data."""
     if vision_engine is None:
         raise HTTPException(status_code=503, detail="Motor de visão não está habilitado.")
 
@@ -275,10 +279,17 @@ async def predict_image_upload(
 
     try:
         content = await file.read()
+        if len(content) > MAX_UPLOAD_BYTES:
+            raise HTTPException(
+                status_code=413,
+                detail=f"Arquivo excede o tamanho máximo permitido ({len(content)/(1024*1024):.1f}MB > {MAX_UPLOAD_SIZE_MB}MB).",
+            )
         return vision_engine.predict_image(
             image_input=content,
             questions=questions_dict,
         )
+    except HTTPException:
+        raise
     except Exception as e:
         logger.exception("Falha no upload e predição de imagem")
         raise HTTPException(status_code=500, detail=f"Erro ao classificar upload: {str(e)}")

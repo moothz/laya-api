@@ -204,9 +204,18 @@ class LayaVisionEngine:
         # Case 2: HTTP / HTTPS URL
         if input_str.startswith(("http://", "https://")):
             import urllib.request
-            req = urllib.request.Request(input_str, headers={"User-Agent": "LayaVision/1.0"})
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                return resp.read()
+            import urllib.error
+            req = urllib.request.Request(
+                input_str,
+                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 LayaVision/1.2"},
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    return resp.read()
+            except urllib.error.HTTPError as he:
+                raise ValueError(f"HTTP error {he.code} fetching URL {input_str}: {he.reason}") from he
+            except Exception as e:
+                raise ValueError(f"Network error fetching URL {input_str}: {e}") from e
 
         # Case 3: Local file path
         if os.path.exists(input_str):

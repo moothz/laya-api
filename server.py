@@ -70,8 +70,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Laya Decision Engine API",
-    version="1.1.0",
-    description="API de alta performance para tomada de decisão e classificação de Texto (Laya), Imagem e Vídeo (SigLIP Zero-Shot).",
+    version="1.2.0",
+    description="API de alta performance para tomada de decisão e classificação de Texto (Laya v0.4.8), Imagem e Vídeo (SigLIP 2 Zero-Shot).",
     lifespan=lifespan,
 )
 
@@ -107,6 +107,14 @@ class PredictRequest(BaseModel):
     model: Optional[str] = Field(default=None, description="Override de modelo (ex: 'multilingual', 'english')")
     task: Optional[str] = Field(default=None, description="Identificador opcional de tarefa")
     lang: Optional[str] = Field(default=None, description="Código ISO do idioma (ex: 'pt', 'en') para ignorar autodetecção")
+    min_confidence: Optional[Union[float, Dict[str, float]]] = Field(
+        default=None,
+        description="Limiar opcional de confiança mínima para gating de abstenção",
+    )
+    use_tournament: bool = Field(
+        default=False,
+        description="Ativar algoritmo de seleção por torneio para perguntas com dezenas de alternativas",
+    )
 
 
 class BatchRequest(BaseModel):
@@ -117,6 +125,7 @@ class BatchRequest(BaseModel):
     lang: Optional[str] = None
     batch_size: Optional[int] = Field(default=None, ge=1)
     sort_by_length: bool = False
+    min_confidence: Optional[Union[float, Dict[str, float]]] = None
 
 
 class PredictImageRequest(BaseModel):
@@ -188,9 +197,13 @@ def list_models():
     """Lista modelos disponíveis de texto e visão."""
     return {
         "text_models": ["multilingual", "english", "typed-decisions"],
-        "vision_models": ["google/siglip-base-patch16-224", "openai/clip-vit-base-patch32"],
+        "vision_models": [
+            "google/siglip2-base-patch16-224",
+            "google/siglip-base-patch16-224",
+            "openai/clip-vit-base-patch32",
+        ],
         "default_text": os.getenv("LAYA_DEFAULT_MODEL", "multilingual"),
-        "default_vision": getattr(vision_engine, "model_id", "google/siglip-base-patch16-224"),
+        "default_vision": getattr(vision_engine, "model_id", "google/siglip2-base-patch16-224"),
     }
 
 
@@ -234,6 +247,8 @@ def predict(req: PredictRequest):
             model=req.model,
             task=req.task,
             lang=req.lang,
+            min_confidence=req.min_confidence,
+            use_tournament=req.use_tournament,
         )
     except Exception as e:
         logger.exception("Falha na predição de texto")
@@ -255,6 +270,7 @@ def predict_batch(req: BatchRequest):
             requests=requests,
             batch_size=req.batch_size,
             sort_by_length=req.sort_by_length,
+            min_confidence=req.min_confidence,
         )
         return {"count": len(results), "results": results}
     except Exception as e:

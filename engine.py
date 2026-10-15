@@ -99,16 +99,30 @@ class LayaTextEngine:
         model: Optional[str] = None,
         task: Optional[str] = None,
         lang: Optional[str] = None,
+        min_confidence: Optional[Union[float, Dict[str, float]]] = None,
+        use_tournament: bool = False,
     ) -> Dict[str, Any]:
         """Execute text classification / decision."""
         t0 = time.perf_counter()
-        result = self.router.predict(
-            state,
-            questions,
-            model=model,
-            task=task,
-            lang=lang,
-        )
+        if use_tournament:
+            import laya
+            decision = self.router.route(state, model=model)
+            model_name = getattr(decision, "model", None) or decision.get("model") if isinstance(decision, dict) else decision.model
+            agent = self.router.load(model_name)
+            result = laya.predict_tournament(agent, state, questions)
+            result["routing"] = dict(decision) if hasattr(decision, "items") or isinstance(decision, dict) else {"model": str(model_name)}
+        else:
+            kwargs: Dict[str, Any] = {}
+            if min_confidence is not None:
+                kwargs["min_confidence"] = min_confidence
+            result = self.router.predict(
+                state,
+                questions,
+                model=model,
+                task=task,
+                lang=lang,
+                **kwargs,
+            )
         t1 = time.perf_counter()
         if isinstance(result, dict) and "routing" in result:
             result["routing"]["engine_timing_ms"] = round((t1 - t0) * 1000, 2)
@@ -119,6 +133,7 @@ class LayaTextEngine:
         requests: List[Dict[str, Any]],
         batch_size: Optional[int] = None,
         sort_by_length: bool = False,
+        min_confidence: Optional[Union[float, Dict[str, float]]] = None,
     ) -> List[Dict[str, Any]]:
         """Execute batch text classification."""
         shape: Dict[str, Any] = {}
@@ -126,11 +141,13 @@ class LayaTextEngine:
             shape["batch_size"] = batch_size
         if sort_by_length:
             shape["sort_by_length"] = True
+        if min_confidence is not None:
+            shape["min_confidence"] = min_confidence
         return list(self.router.predict_batch(requests, **shape))
 
 
 class LayaVisionEngine:
-    """Zero-shot visual and video question answering engine using SigLIP / CLIP with multi-frame batching."""
+    """Zero-shot visual and video question answering engine using SigLIP / SigLIP 2 / CLIP with multi-frame batching."""
 
     def __init__(
         self,
@@ -140,7 +157,7 @@ class LayaVisionEngine:
     ):
         self.device_str = device or os.getenv("LAYA_DEVICE", "cuda" if torch.cuda.is_available() else "cpu")
         self.device = torch.device(self.device_str)
-        self.model_id = model_id or os.getenv("LAYA_VISION_MODEL", "google/siglip-base-patch16-224")
+        self.model_id = model_id or os.getenv("LAYA_VISION_MODEL", "google/siglip2-base-patch16-224")
 
         if torch_dtype is not None:
             self.dtype = torch_dtype
@@ -157,7 +174,7 @@ class LayaVisionEngine:
 
         from transformers import AutoProcessor, AutoModel
         self.processor = AutoProcessor.from_pretrained(self.model_id)
-        self.model = AutoModel.from_pretrained(self.model_id, torch_dtype=self.dtype)
+        self.model = AutoModel.from_pretrained(self.model_id, dtype=self.dtype)
         self.model.to(self.device).eval()
 
         if self.device.type == "cuda":

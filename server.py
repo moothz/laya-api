@@ -21,6 +21,7 @@ from pydantic import BaseModel, Field, field_validator
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 from engine import LayaTextEngine, LayaVisionEngine
+from bge_m3_engine import BgeM3DecisionEngine
 
 # Configure logging
 logging.basicConfig(
@@ -32,6 +33,7 @@ logger = logging.getLogger("laya.api")
 # Global engine instances
 text_engine: Optional[LayaTextEngine] = None
 vision_engine: Optional[LayaVisionEngine] = None
+bgem3_engine: Optional[BgeM3DecisionEngine] = None
 
 MAX_UPLOAD_SIZE_MB = int(os.getenv("MAX_UPLOAD_SIZE_MB", "50"))
 MAX_UPLOAD_BYTES = MAX_UPLOAD_SIZE_MB * 1024 * 1024
@@ -39,7 +41,7 @@ MAX_UPLOAD_BYTES = MAX_UPLOAD_SIZE_MB * 1024 * 1024
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global text_engine, vision_engine
+    global text_engine, vision_engine, bgem3_engine
 
     device = os.getenv("LAYA_DEVICE", "cuda" if torch.cuda.is_available() else "cpu")
     cpu_threads = int(os.getenv("LAYA_THREADS", "4"))
@@ -47,7 +49,17 @@ async def lifespan(app: FastAPI):
 
     logger.info(f"Initializing Laya API Server on device: {device}...")
 
-    # Initialize text engine
+    # Initialize BGE-M3 text engine (Ravena fine-tuned)
+    bgem3_model_path = os.getenv("LAYA_BGEM3_PATH", "/opt/models/ravena-bgem3")
+    if os.path.exists(bgem3_model_path):
+        try:
+            logger.info(f"Carregando BGE-M3 Engine de '{bgem3_model_path}' no dispositivo {device}...")
+            bgem3_engine = BgeM3DecisionEngine(model_name_or_path=bgem3_model_path, device=device)
+        except Exception as e:
+            logger.warning(f"Falha ao carregar BGE-M3 Engine: {e}")
+            bgem3_engine = None
+
+    # Initialize text engine (Laya legacy router)
     text_engine = LayaTextEngine(
         device=device,
         cpu_threads=cpu_threads,
@@ -64,6 +76,7 @@ async def lifespan(app: FastAPI):
 
     yield
 
+    bgem3_engine = None
     text_engine = None
     vision_engine = None
 
@@ -174,9 +187,14 @@ def health():
         }
 
     return {
-        "status": "ok" if text_engine is not None else "initializing",
+        "status": "ok" if (text_engine is not None or bgem3_engine is not None) else "initializing",
         "device": str(text_engine.device) if text_engine else "unknown",
         "vram": vram_stats,
+        "bgem3_engine": {
+            "ready": bgem3_engine is not None,
+            "model": getattr(bgem3_engine, "model_path", None),
+            "dtype": "torch.bfloat16",
+        },
         "text_engine": {
             "ready": text_engine is not None,
             "preload_models": getattr(text_engine, "preload_models", []),
@@ -196,13 +214,13 @@ def health():
 def list_models():
     """Lista modelos disponíveis de texto e visão."""
     return {
-        "text_models": ["multilingual", "english", "typed-decisions"],
+        "text_models": ["ravena-bgem3", "bge-m3", "multilingual", "english", "typed-decisions"],
         "vision_models": [
             "google/siglip2-base-patch16-224",
             "google/siglip-base-patch16-224",
             "openai/clip-vit-base-patch32",
         ],
-        "default_text": os.getenv("LAYA_DEFAULT_MODEL", "multilingual"),
+        "default_text": os.getenv("LAYA_API_DEFAULT_MODEL", "ravena-bgem3"),
         "default_vision": getattr(vision_engine, "model_id", "google/siglip2-base-patch16-224"),
     }
 
@@ -216,7 +234,7 @@ def list_qtypes():
 @app.post("/predict")
 def predict(req: PredictRequest):
     """Classificação de texto e multimodal."""
-    if text_engine is None:
+    if text_engine is None and bgem3_engine is None:
         raise HTTPException(status_code=503, detail="Serviço Laya ainda está inicializando.")
 
     # Check if state represents a visual / video request
@@ -240,6 +258,22 @@ def predict(req: PredictRequest):
                 logger.exception("Falha na predição visual via /predict")
                 raise HTTPException(status_code=400, detail=f"Falha no processamento visual: {str(e)}")
 
+    target_model = req.model or os.getenv("LAYA_API_DEFAULT_MODEL", "ravena-bgem3")
+    if bgem3_engine is not None and target_model in ("ravena-bgem3", "bge-m3", "default"):
+        try:
+            return bgem3_engine.predict(
+                state=req.state,
+                questions=_questions_to_dict(req.questions),
+                temperature=0.05,
+                model_alias=target_model,
+            )
+        except Exception as e:
+            logger.exception("Falha na predição BGE-M3")
+            raise HTTPException(status_code=500, detail=f"Erro durante a predição BGE-M3: {str(e)}")
+
+    if text_engine is None:
+        raise HTTPException(status_code=503, detail="Motor legado Laya não inicializado.")
+
     try:
         return text_engine.predict(
             state=req.state,
@@ -258,8 +292,22 @@ def predict(req: PredictRequest):
 @app.post("/predict/batch")
 def predict_batch(req: BatchRequest):
     """Classificação de texto em lote."""
-    if text_engine is None:
+    if text_engine is None and bgem3_engine is None:
         raise HTTPException(status_code=503, detail="Serviço Laya ainda está inicializando.")
+
+    target_model = req.model or os.getenv("LAYA_API_DEFAULT_MODEL", "ravena-bgem3")
+    if bgem3_engine is not None and target_model in ("ravena-bgem3", "bge-m3", "default"):
+        try:
+            questions = _questions_to_dict(req.questions)
+            batch_reqs = [{"state": state, "questions": questions, "model": target_model} for state in req.states]
+            results = bgem3_engine.predict_batch(requests=batch_reqs, temperature=0.05, model_alias=target_model)
+            return {"count": len(results), "results": results}
+        except Exception as e:
+            logger.exception("Falha no processamento em lote BGE-M3")
+            raise HTTPException(status_code=500, detail=f"Erro durante predição em lote: {str(e)}")
+
+    if text_engine is None:
+        raise HTTPException(status_code=503, detail="Motor legado Laya não inicializado.")
 
     questions = _questions_to_dict(req.questions)
     controls = {k: v for k, v in [("model", req.model), ("task", req.task), ("lang", req.lang)] if v is not None}

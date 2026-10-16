@@ -1,0 +1,65 @@
+{"query": "mas e se eu quiser criar boi na fazenda?", "expected": "conversa", "candidates": ["fazenda", "0800", "epic", "conversa"], "note": "Hard negative para !fazenda"}
+{"query": "meu avô tinha uma fazenda de café no interior de minas", "expected": "conversa", "candidates": ["ana", "fazenda", "conversa", "rab"], "note": "Hard negative para !fazenda"}
+{"query": "quanto custa o hectare de terra para montar uma fazenda?", "expected": "conversa", "candidates": ["sorteio-entrar", "fazenda", "conversa", "filtro-regex"], "note": "Hard negative para !fazenda"}
+{"query": "qual a diferença conceitual entre chácara, sítio e fazenda?", "expected": "conversa", "candidates": ["wr-build", "tt", "fazenda", "conversa"], "note": "Hard negative para !fazenda"}
+{"query": "será que compensa colocar placa de energia solar numa fazenda?", "expected": "conversa", "candidates": ["fazenda", "mutecategoria [categoria]", "sqe", "conversa"], "note": "Hard negative para !fazenda"}
+{"query": "o preço da soja caiu e os donos de fazenda estão preocupados", "expected": "conversa", "candidates": ["conversa", "fazenda", "sticker", "horoscopo"], "note": "Hard negative para !fazenda"}
+{"query": "o clima entre a diretoria e os funcionários azedou de vez", "expected": "conversa", "candidates": ["faladores-atividade", "conversa", "clima", "lastfm"], "note": "Hard negative para !clima"}
+{"query": "o que você acha das mudanças climáticas globais?", "expected": "conversa", "candidates": ["clima", "conversa", "faz-colher", "presente"], "note": "Hard negative para !clima"}
+{"query": "a reunião foi péssima, o clima ficou pesadíssimo", "expected": "conversa", "candidates": ["faladores-reset", "clima", "youtube-mudartitulo", "conversa"], "note": "Hard negative para !clima"}
+{"query": "adoro cidades com clima ameno de montanha", "expected": "conversa", "candidates": ["conversa", "filtro-links", "clima", "kick-midia-del"], "note": "Hard negative para !clima"}
+{"query": "essa discussão gerou um clima estranho no grupo", "expected": "conversa", "candidates": ["youtube-usaria", "clima", "pastas", "conversa"], "note": "Hard negative para !clima"}
+{"query": "sonhei que eu estava pescando peixe dourado num lago calmo", "expected": "conversa", "candidates": ["conversa", "cmd", "pesca", "traduzir"], "note": "Hard negative para !pesca"}
+{"query": "qual o melhor tipo de isca para pesca esportiva de tucunaré?", "expected": "conversa", "candidates": ["abrir-del", "conversa", "canal-seguir", "pesca"], "note": "Hard negative para !pesca"}
+{"query": "meu pai foi pescar no rio Paraná no feriado", "expected": "conversa", "candidates": ["pesca", "filtro-permitiradm", "emojikitchen", "conversa"], "note": "Hard negative para !pesca"}
+{"query": "o setor de pesca artesanal sofreu com o derramamento de óleo", "expected": "conversa", "candidates": ["delwebhook", "conversa", "filtro-pessoa", "pesca"], "note": "Hard negative para !pesca"}
+{"query": "não como carne de gado nem frango, só como peixe", "expected": "conversa", "candidates": ["sqe", "pesca", "conversa", "imagine"], "note": "Hard negative para !pesca"}
+{"query": "ele foi imprudente e jogou uma verdadeira roleta russa na carreira", "expected": "conversa", "candidates": ["faladores-reset", "conversa", "afk", "roleta"], "note": "Hard negative para !roleta"}
+{"query": "a roleta dos cassinos é matematicamente programada pra casa lucrar", "expected": "conversa", "candidates": ["mu-personagens", "conversa", "p-criar", "roleta"], "note": "Hard negative para !roleta"}
+{"query": "a vida no trânsito das grandes cidades virou uma roleta russa", "expected": "conversa", "candidates": ["conversa", "copa-tabela", "roleta", "tts-narrador"], "note": "Hard negative para !roleta"}
+{"query": "por que os Estados Unidos conseguem emitir tanto dólar sem quebrar?", "expected": "conversa", "candidates": ["dolar", "cmd-enable", "conversa", "clonarcartao"], "note": "Hard negative para !dolar"}
+{"query": "qual a história por trás da criação da moeda euro?", "expected": "conversa", "candidates": ["dolar", "pesca-info", "presente", "conversa"], "note": "Hard negative para !dolar"}
+{"query": "por que quase todo o comércio marítimo internacional usa o dólar?", "expected": "conversa", "candidates": ["conversa", "dolar", "horoscopo", "audio"], "note": "Hard negative para !dolar"}
+{"query": "você pode me ajudar a escrever uma redação sobre meio ambiente?", "expected": "conversa", "candidates": ["anagrama", "celibar", "conversa", "ajuda"], "note": "Hard negative para !ajuda"}
+{"query": "preciso de ajuda urgente para resolver essa equação de segundo grau", "expected": "conversa", "candidates": ["conversa", "youtube-midia", "ajuda", "cmd-enviartudo"], "note": "Hard negative para !ajuda"}
+{"query": "me ajuda a escolher um presente de aniversário pra minha mãe", "expected": "conversa", "candidates": ["ignorar", "ajuda", "mu-denunciar", "conversa"], "note": "Hard negative para !ajuda"}
+{"query": "como podemos ajudar pessoas em situação de rua no inverno?", "expected": "conversa", "candidates": ["conversa", "ajuda", "grupao", "copa-time"], "note": "Hard negative para !ajuda"}
+{"query": "meu peixinho dourado morreu hoje, fiquei muito chateado", "expected": "conversa", "candidates": ["conversa", "roleta-silenciar [true|false|toggle]", "raffle-parar <link>", "morreu"], "note": "Hard negative para !morreu"}
+{"query": "em que ano morreu o físico Stephen Hawking?", "expected": "conversa", "candidates": ["conversa", "filtro-links", "eventos", "morreu"], "note": "Hard negative para !morreu"}
+{"query": "qual filósofo clássico cunhou a frase 'Deus morreu'?", "expected": "conversa", "candidates": ["cmd-sethoras", "morreu", "setdespedida", "conversa"], "note": "Hard negative para !morreu"}
+{"query": "você acha que casamento antes dos 25 anos é arriscado?", "expected": "conversa", "candidates": ["l-cancelar", "conversa", "casar", "emojikitchen"], "note": "Hard negative para !casar"}
+{"query": "sonhei que estava na igreja indo casar de tênis e bermuda", "expected": "conversa", "candidates": ["eventos", "conversa", "casar", "afk"], "note": "Hard negative para !casar"}
+{"query": "qual o custo médio de uma festa de casamento tradicional hoje?", "expected": "conversa", "candidates": ["casar", "lc", "kick-titulo", "conversa"], "note": "Hard negative para !casar"}
+{"query": "você prefere chamar de biscoito ou de bolacha?", "expected": "conversa", "candidates": ["biscoito", "p-criar", "stt", "conversa"], "note": "Hard negative para !biscoito"}
+{"query": "como fazer biscoito de polvilho assado que não murcha?", "expected": "conversa", "candidates": ["setapelido", "variaveis", "conversa", "biscoito"], "note": "Hard negative para !biscoito"}
+{"query": "você acredita que os signos astrológicos influenciam a personalidade?", "expected": "conversa", "candidates": ["kick-midia", "horoscopo", "conversa", "resumo"], "note": "Hard negative para !horoscopo"}
+{"query": "qual a origem histórica da astrologia e do zodíaco na babilônia?", "expected": "conversa", "candidates": ["horoscopo", "pix", "sq", "conversa"], "note": "Hard negative para !horoscopo"}
+{"query": "a forma como aquela empresa lidou com a crise foi uma piada", "expected": "conversa", "candidates": ["conversa", "piada", "celibar", "roleta-silenciar [true|false|toggle]"], "note": "Hard negative para !piada"}
+{"query": "ele tentou se justificar na entrevista mas virou piada na internet", "expected": "conversa", "candidates": ["mute", "piada", "conversa", "tomp3"], "note": "Hard negative para !piada"}
+{"query": "você tem alguma notícia do meu amigo que viajou?", "expected": "conversa", "candidates": ["roleta-reset", "conversa", "noticias", "rebaixar"], "note": "Hard negative para !noticias"}
+{"query": "estou sem internet faz três dias, perdi todas as notícias da semana", "expected": "conversa", "candidates": ["conversa", "filtro-permitirlink", "noticias", "pescados"], "note": "Hard negative para !noticias"}
+{"query": "qual o perfil psicológico ideal para trabalhar sob pressão?", "expected": "conversa", "candidates": ["conversa", "perfil", "doar", "sorteio-sair"], "note": "Hard negative para !perfil"}
+{"query": "gostei do perfil daquela empresa de tecnologia no LinkedIn", "expected": "conversa", "candidates": ["pesca-rede [iscas]", "perfil", "pinto", "conversa"], "note": "Hard negative para !perfil"}
+{"query": "qual o ranking dos países com maior índice de desenvolvimento humano?", "expected": "conversa", "candidates": ["conversa", "mu-casar", "sqc", "ranking"], "note": "Hard negative para !ranking"}
+{"query": "o brasil subiu posições no ranking mundial de exportação de grãos", "expected": "conversa", "candidates": ["fechar", "ranking", "horoscopo", "conversa"], "note": "Hard negative para !ranking"}
+{"query": "qual o termo médico técnico para perda repentina de olfato?", "expected": "conversa", "candidates": ["termo", "roleta-tempo", "conversa", "setcustomsemprefixo"], "note": "Hard negative para !termo"}
+{"query": "não entendi bem aquele termo jurídico que o juiz citou no despacho", "expected": "conversa", "candidates": ["termo", "kick-marcar", "conversa", "mutecategoria [categoria]"], "note": "Hard negative para !termo"}
+{"query": "previsão do tempo para são paulo amanhã", "expected": "clima", "candidates": ["yt", "clima", "conversa", "twitch-marcar"], "note": "Invocação legítima de !clima"}
+{"query": "quantos graus está em curitiba?", "expected": "clima", "candidates": ["clima", "interagir-cmd", "topstreams", "conversa"], "note": "Invocação legítima de !clima"}
+{"query": "colher soja da minha fazenda", "expected": "faz-colher", "candidates": ["correios-del", "faz-colher", "setautotranslate", "conversa"], "note": "Invocação legítima de !faz-colher"}
+{"query": "colher a plantação da fazenda", "expected": "faz-colher", "candidates": ["anime", "faz-colher", "conversa", "tt"], "note": "Invocação legítima de !faz-colher"}
+{"query": "fazer a colheita dos canteiros", "expected": "faz-colher", "candidates": ["psn", "faz-colher", "waifus / !munae", "conversa"], "note": "Invocação legítima de !faz-colher"}
+{"query": "colher tudo na fazenda", "expected": "faz-colher", "candidates": ["faz-colher", "youtube-usaria", "conversa", "twitch-canal"], "note": "Invocação legítima de !faz-colher"}
+{"query": "plantar sementes na fazenda", "expected": "faz-plantar", "candidates": ["faz-plantar", "banirspammers", "notificar-grupofechado", "conversa"], "note": "Invocação legítima de !faz-plantar"}
+{"query": "plantar cenoura nos canteiros", "expected": "faz-plantar", "candidates": ["conversa", "cmd-gerenciamento", "faz-plantar", "l-cancelar"], "note": "Invocação legítima de !faz-plantar"}
+{"query": "comprar sementes na loja", "expected": "faz-comprar", "candidates": ["conversa", "copa-time", "kick-fotogrupo", "faz-comprar"], "note": "Invocação legítima de !faz-comprar"}
+{"query": "ver o catálogo da loja da fazenda", "expected": "faz-loja", "candidates": ["setautotranslate", "faz-loja", "ana", "conversa"], "note": "Invocação legítima de !faz-loja"}
+{"query": "vender as colheitas por moedas", "expected": "faz-vender", "candidates": ["p-baixar", "conversa", "ls", "faz-vender"], "note": "Invocação legítima de !faz-vender"}
+{"query": "ver meus itens da fazenda", "expected": "faz-inventario", "candidates": ["faz-inventario", "conversa", "clonarcartao", "tomp4"], "note": "Invocação legítima de !faz-inventario"}
+{"query": "como estão os animais da minha fazenda?", "expected": "fazenda", "candidates": ["conversa", "anime", "fazenda", "ana"], "note": "Invocação legítima de !fazenda"}
+{"query": "ver minha fazenda no jardim", "expected": "fazenda", "candidates": ["sc", "conversa", "fazenda", "kick-usaria"], "note": "Invocação legítima de !fazenda"}
+{"query": "mostrar minha fazenda", "expected": "fazenda", "candidates": ["conversa", "codigo", "audio", "fazenda"], "note": "Invocação legítima de !fazenda"}
+{"query": "manda uma cantada para a cremosa", "expected": "cantada", "candidates": ["cantada", "placa", "conversa", "roleta-reset"], "note": "Invocação legítima de !cantada"}
+{"query": "quais são os comandos da ravena?", "expected": "ajuda", "candidates": ["ajuda", "pesca-info", "conversa", "setboasvindas"], "note": "Invocação legítima de !ajuda"}
+{"query": "como funciona o bot da ravena?", "expected": "ajuda", "candidates": ["advertencias", "ajuda", "buscar", "conversa"], "note": "Invocação legítima de !ajuda"}
+{"query": "gera uma imagem de um gato cibernético", "expected": "imagine", "candidates": ["imagine", "copa-time", "conversa", "0800"], "note": "Invocação legítima de !imagine"}

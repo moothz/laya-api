@@ -1,0 +1,6340 @@
+[
+  {
+    "cmd": "!ai",
+    "name": "ai",
+    "desc": "Envia uma pergunta ou instrução para a IA responder ou interagir",
+    "category": "ia",
+    "usage": [
+      "!ai Quem foi Ada Lovelace?",
+      "!ai Explique como funciona o motor a combustão"
+    ],
+    "module": "AICommands.js",
+    "tags": [
+      "ia",
+      "ai",
+      "chat",
+      "conversar",
+      "inteligencia artificial",
+      "gpt",
+      "gemini"
+    ]
+  },
+  {
+    "cmd": "!ajuda",
+    "name": "ajuda",
+    "desc": "Consulta a assistente inteligente para tirar dúvidas sobre comandos e uso do bot",
+    "category": "geral",
+    "usage": [
+      "!ajuda como criar comandos personalizados",
+      "!ajuda como funciona a pescaria"
+    ],
+    "module": "Ajuda.js",
+    "tags": [
+      "ajuda",
+      "suporte",
+      "faq",
+      "duvidas",
+      "como usar",
+      "comandos",
+      "ia",
+      "help"
+    ]
+  },
+  {
+    "cmd": "!anagrama",
+    "name": "anagrama",
+    "desc": "Inicia uma partida de Anagrama no grupo",
+    "category": "jogos",
+    "usage": [
+      "!anagrama"
+    ],
+    "module": "AnagramGame.js",
+    "tags": [
+      "jogos",
+      "anagrama",
+      "palavras",
+      "game",
+      "ranking",
+      "adivinhar"
+    ]
+  },
+  {
+    "cmd": "!ana",
+    "name": "ana",
+    "desc": "Envia um palpite para a palavra embaralhada",
+    "category": "jogos",
+    "usage": [
+      "!ana computador",
+      "!ana teclado"
+    ],
+    "module": "AnagramGame.js",
+    "tags": [
+      "jogos",
+      "anagrama",
+      "palavras",
+      "game",
+      "ranking",
+      "adivinhar"
+    ]
+  },
+  {
+    "cmd": "!ana-dica",
+    "name": "ana-dica",
+    "desc": "Solicita uma dica sobre a palavra atual",
+    "category": "jogos",
+    "usage": [
+      "!ana-dica"
+    ],
+    "module": "AnagramGame.js",
+    "tags": [
+      "jogos",
+      "anagrama",
+      "palavras",
+      "game",
+      "ranking",
+      "adivinhar"
+    ]
+  },
+  {
+    "cmd": "!ana-pular",
+    "name": "ana-pular",
+    "desc": "Pula a palavra atual da rodada",
+    "category": "jogos",
+    "usage": [
+      "!ana-pular"
+    ],
+    "module": "AnagramGame.js",
+    "tags": [
+      "jogos",
+      "anagrama",
+      "palavras",
+      "game",
+      "ranking",
+      "adivinhar"
+    ]
+  },
+  {
+    "cmd": "!anagrama-ranking",
+    "name": "anagrama-ranking",
+    "desc": "Exibe o ranking de jogadores com mais pontos no Anagrama",
+    "category": "jogos",
+    "usage": [
+      "!anagrama-ranking"
+    ],
+    "module": "AnagramGame.js",
+    "tags": [
+      "jogos",
+      "anagrama",
+      "palavras",
+      "game",
+      "ranking",
+      "adivinhar"
+    ]
+  },
+  {
+    "cmd": "!anagrama-reset",
+    "name": "anagrama-reset",
+    "desc": "Reseta o ranking do jogo no grupo (Apenas Administradores)",
+    "category": "jogos",
+    "usage": [
+      "!anagrama-reset"
+    ],
+    "module": "AnagramGame.js",
+    "tags": [
+      "jogos",
+      "anagrama",
+      "palavras",
+      "game",
+      "ranking",
+      "adivinhar"
+    ]
+  },
+  {
+    "cmd": "!anime",
+    "name": "anime",
+    "desc": "Pesquisa informações e sinopse de um anime",
+    "category": "cultura",
+    "usage": [
+      "!anime Naruto",
+      "!anime Attack on Titan",
+      "!anime Frieren"
+    ],
+    "module": "AnimeCommands.js",
+    "tags": [
+      "anime",
+      "otaku",
+      "mal",
+      "myanimelist",
+      "desenho",
+      "animacao",
+      "japao"
+    ]
+  },
+  {
+    "cmd": "!anonimo",
+    "name": "anonimo",
+    "desc": "Envia uma mensagem ou mídia anonimamente para o grupo indicado",
+    "category": "jogos",
+    "usage": [
+      "!anonimo [nome_do_grupo] Mensagem secreta aqui",
+      "!anonimo (em resposta a uma imagem com legenda)"
+    ],
+    "module": "AnonymousMessage.js",
+    "tags": [
+      "anonimo",
+      "segredo",
+      "correio",
+      "mensagem anonima",
+      "confissao"
+    ]
+  },
+  {
+    "cmd": "!biscoito",
+    "name": "biscoito",
+    "desc": "Abre um biscoito da sorte e revela uma mensagem do destino",
+    "category": "zoeira",
+    "usage": [
+      "!biscoito"
+    ],
+    "module": "BiscoitoDaSorte.js",
+    "tags": [
+      "biscoito",
+      "sorte",
+      "frase",
+      "motivacional",
+      "zoeira",
+      "fortune cookie"
+    ]
+  },
+  {
+    "cmd": "!imagine",
+    "name": "imagine",
+    "desc": "Gera uma imagem através de descrição textual usando IA",
+    "category": "ia",
+    "usage": [
+      "!imagine um astronauta andando a cavalo na lua em aquarela",
+      "!imagine cyberpunk city at night"
+    ],
+    "module": "BonsaiCommands.js",
+    "tags": [
+      "ia",
+      "imagem",
+      "gerar imagem",
+      "imagine",
+      "bonsai",
+      "arte",
+      "desenho"
+    ]
+  },
+  {
+    "cmd": "!cantada",
+    "name": "cantada",
+    "desc": "Envia uma cantada aleatória (ou direcionada a um usuário mencionado)",
+    "category": "zoeira",
+    "usage": [
+      "!cantada",
+      "!cantada @fulano"
+    ],
+    "module": "CantadaCommand.js",
+    "tags": [
+      "cantada",
+      "zoeira",
+      "romance",
+      "flerte",
+      "humor",
+      "diversao"
+    ]
+  },
+  {
+    "cmd": "!copa",
+    "name": "copa",
+    "desc": "Exibe o menu principal de opções e comandos da Copa 2026",
+    "category": "cultura",
+    "usage": [
+      "!copa"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!copa-hoje",
+    "name": "copa-hoje",
+    "desc": "Mostra todos os jogos da Copa agendados para a data de hoje",
+    "category": "cultura",
+    "usage": [
+      "!copa-hoje"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!copa-jogos",
+    "name": "copa-jogos",
+    "desc": "Lista próximos jogos ou partidas de uma seleção/data específica",
+    "category": "cultura",
+    "usage": [
+      "!copa-jogos",
+      "!copa-jogos Brasil"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!copa-tabela",
+    "name": "copa-tabela",
+    "desc": "Exibe a classificação e tabela dos grupos da Copa",
+    "category": "cultura",
+    "usage": [
+      "!copa-tabela",
+      "!copa-tabela A"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!copa-time",
+    "name": "copa-time",
+    "desc": "Mostra informações, elenco e jogos de uma seleção",
+    "category": "cultura",
+    "usage": [
+      "!copa-time Brasil",
+      "!copa-time Argentina"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!copa-jogo",
+    "name": "copa-jogo",
+    "desc": "Exibe detalhes de uma partida específica pelo ID",
+    "category": "cultura",
+    "usage": [
+      "!copa-jogo 1"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!copa-estadios",
+    "name": "copa-estadios",
+    "desc": "Lista os 16 estádios oficiais da Copa do Mundo",
+    "category": "cultura",
+    "usage": [
+      "!copa-estadios"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!copa-seguir",
+    "name": "copa-seguir",
+    "desc": "Ativa ou desativa notificações automáticas de gols e partidas de um time",
+    "category": "cultura",
+    "usage": [
+      "!copa-seguir Brasil"
+    ],
+    "module": "Copa2026.js",
+    "tags": [
+      "copa",
+      "copa 2026",
+      "futebol",
+      "jogos",
+      "tabela",
+      "estadios",
+      "selecoes",
+      "world cup"
+    ]
+  },
+  {
+    "cmd": "!correios",
+    "name": "correios",
+    "desc": "Consulta o status de um código de rastreio ou adiciona para monitoramento",
+    "category": "utilidades",
+    "usage": [
+      "!correios AA123456789BR",
+      "!correios AA123456789BR Celular novo"
+    ],
+    "module": "CorreiosCommands.js",
+    "tags": [
+      "correios",
+      "rastreio",
+      "encomenda",
+      "pacote",
+      "sedex",
+      "pac"
+    ]
+  },
+  {
+    "cmd": "!correios-lista",
+    "name": "correios-lista",
+    "desc": "Lista todas as encomendas que estão sendo rastreadas no chat",
+    "category": "utilidades",
+    "usage": [
+      "!correios-lista"
+    ],
+    "module": "CorreiosCommands.js",
+    "tags": [
+      "correios",
+      "rastreio",
+      "encomenda",
+      "pacote",
+      "sedex",
+      "pac"
+    ]
+  },
+  {
+    "cmd": "!correios-del",
+    "name": "correios-del",
+    "desc": "Remove um pacote do monitoramento",
+    "category": "utilidades",
+    "usage": [
+      "!correios-del AA123456789BR"
+    ],
+    "module": "CorreiosCommands.js",
+    "tags": [
+      "correios",
+      "rastreio",
+      "encomenda",
+      "pacote",
+      "sedex",
+      "pac"
+    ]
+  },
+  {
+    "cmd": "!compartilhar",
+    "name": "compartilhar",
+    "desc": "Gera um código de compartilhamento para uma variável customizada",
+    "category": "utilidades",
+    "usage": [
+      "!compartilhar nome_da_variavel"
+    ],
+    "module": "DataShare.js",
+    "tags": [
+      "variaveis",
+      "compartilhar",
+      "backup",
+      "exportar",
+      "importar",
+      "dados"
+    ]
+  },
+  {
+    "cmd": "!roll",
+    "name": "roll",
+    "desc": "Rola dados poliédricos com base na notação de RPG",
+    "category": "jogos",
+    "usage": [
+      "!roll 1d20",
+      "!roll 2d6+3",
+      "!roll 1d100"
+    ],
+    "module": "DiceCommands.js",
+    "tags": [
+      "dados",
+      "dado",
+      "rpg",
+      "roll",
+      "d20",
+      "d6",
+      "d10",
+      "sorteio",
+      "aleatorio"
+    ]
+  },
+  {
+    "cmd": "!doar",
+    "name": "doar",
+    "desc": "Exibe as opções de doação e chave Pix para apoiar o projeto",
+    "category": "geral",
+    "usage": [
+      "!doar"
+    ],
+    "module": "DonationCommands.js",
+    "tags": [
+      "doar",
+      "doacao",
+      "pix",
+      "ajuda",
+      "apoiar",
+      "crowdfunding",
+      "vantagens",
+      "bonus",
+      "fazenda",
+      "jardim"
+    ]
+  },
+  {
+    "cmd": "!doar-vantagens",
+    "name": "doar-vantagens",
+    "desc": "Exibe todas as vantagens e bônus de doadores e o que você já ganhou",
+    "category": "geral",
+    "usage": [
+      "!doar-vantagens",
+      "!vantagens"
+    ],
+    "module": "DonationCommands.js",
+    "tags": [
+      "doar",
+      "doacao",
+      "pix",
+      "ajuda",
+      "apoiar",
+      "crowdfunding",
+      "vantagens",
+      "bonus",
+      "fazenda",
+      "jardim"
+    ]
+  },
+  {
+    "cmd": "!emojikitchen",
+    "name": "emojikitchen",
+    "desc": "Funde dois emojis em uma figurinha única e criativa",
+    "category": "stickers",
+    "usage": [
+      "!emojikitchen 🐱 🚀",
+      "!emojikitchen 🐶 🍕"
+    ],
+    "module": "EmojiKitchenCommands.js",
+    "tags": [
+      "emoji",
+      "emojis",
+      "figurinha",
+      "sticker",
+      "kitchen",
+      "misturar",
+      "combinar"
+    ]
+  },
+  {
+    "cmd": "!tomp3",
+    "name": "tomp3",
+    "desc": "Converte um vídeo ou áudio citado para o formato MP3",
+    "category": "midia",
+    "usage": [
+      "!tomp3 (em resposta a um áudio ou vídeo)"
+    ],
+    "module": "FileConversions.js",
+    "tags": [
+      "conversao",
+      "converter",
+      "audio",
+      "video",
+      "mp3",
+      "mp4",
+      "ffmpeg"
+    ]
+  },
+  {
+    "cmd": "!tomp4",
+    "name": "tomp4",
+    "desc": "Converte uma figurinha animada ou GIF para o formato de vídeo MP4",
+    "category": "midia",
+    "usage": [
+      "!tomp4 (em resposta a uma figurinha ou gif)"
+    ],
+    "module": "FileConversions.js",
+    "tags": [
+      "conversao",
+      "converter",
+      "audio",
+      "video",
+      "mp3",
+      "mp4",
+      "ffmpeg"
+    ]
+  },
+  {
+    "cmd": "!pastas",
+    "name": "pastas",
+    "desc": "Lista as pastas de arquivos públicas ou do grupo",
+    "category": "arquivos",
+    "usage": [
+      "!pastas"
+    ],
+    "module": "FileManager.js",
+    "tags": [
+      "arquivos",
+      "pastas",
+      "download",
+      "salvar",
+      "storage",
+      "gerenciamento"
+    ]
+  },
+  {
+    "cmd": "!p-criar",
+    "name": "p-criar",
+    "desc": "Cria uma nova pasta para armazenar arquivos",
+    "category": "arquivos",
+    "usage": [
+      "!p-criar memes"
+    ],
+    "module": "FileManager.js",
+    "tags": [
+      "arquivos",
+      "pastas",
+      "download",
+      "salvar",
+      "storage",
+      "gerenciamento"
+    ]
+  },
+  {
+    "cmd": "!p-enviar",
+    "name": "p-enviar",
+    "desc": "Salva uma mídia citada dentro de uma pasta",
+    "category": "arquivos",
+    "usage": [
+      "!p-enviar memes (em resposta a uma foto/vídeo)"
+    ],
+    "module": "FileManager.js",
+    "tags": [
+      "arquivos",
+      "pastas",
+      "download",
+      "salvar",
+      "storage",
+      "gerenciamento"
+    ]
+  },
+  {
+    "cmd": "!p-baixar",
+    "name": "p-baixar",
+    "desc": "Baixa ou envia um arquivo armazenado em uma pasta",
+    "category": "arquivos",
+    "usage": [
+      "!p-baixar memes foto.jpg"
+    ],
+    "module": "FileManager.js",
+    "tags": [
+      "arquivos",
+      "pastas",
+      "download",
+      "salvar",
+      "storage",
+      "gerenciamento"
+    ]
+  },
+  {
+    "cmd": "!p-excluir",
+    "name": "p-excluir",
+    "desc": "Exclui uma pasta ou arquivo salvo",
+    "category": "arquivos",
+    "usage": [
+      "!p-excluir memes foto.jpg"
+    ],
+    "module": "FileManager.js",
+    "tags": [
+      "arquivos",
+      "pastas",
+      "download",
+      "salvar",
+      "storage",
+      "gerenciamento"
+    ]
+  },
+  {
+    "cmd": "!pescar",
+    "name": "pescar",
+    "desc": "Lança a linha na água para pescar peixes, itens ou tesouros",
+    "category": "jogos",
+    "usage": [
+      "!pescar"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pesca-rede [iscas]",
+    "name": "pesca-rede [iscas]",
+    "desc": "Lança uma rede de pesca para capturar criaturas em lote gastando múltiplas iscas",
+    "category": "jogos",
+    "usage": [
+      "!pesca-rede",
+      "!pesca-rede 10"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pesca-iscas",
+    "name": "pesca-iscas",
+    "desc": "Exibe seu inventário de iscas e opções de compra/coleta",
+    "category": "jogos",
+    "usage": [
+      "!pesca-iscas"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pesca-ranking",
+    "name": "pesca-ranking",
+    "desc": "Exibe os melhores pescadores do grupo por pontuação ou peixes lendários",
+    "category": "jogos",
+    "usage": [
+      "!pesca-ranking"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pescados",
+    "name": "pescados",
+    "desc": "Lista os peixes que você já pescou e seu histórico de capturas",
+    "category": "jogos",
+    "usage": [
+      "!pescados"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pesca-info",
+    "name": "pesca-info",
+    "desc": "Mostra informações, guia de varas, iscas e biomas da pescaria",
+    "category": "jogos",
+    "usage": [
+      "!pesca-info"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pesca-lendas",
+    "name": "pesca-lendas",
+    "desc": "Exibe o livro de peixes lendários capturados",
+    "category": "jogos",
+    "usage": [
+      "!pesca-lendas"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pesca-reset",
+    "name": "pesca-reset",
+    "desc": "Reseta os dados de pescaria do grupo (Apenas Administradores)",
+    "category": "jogos",
+    "usage": [
+      "!pesca-reset"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!pesca-abandonar",
+    "name": "pesca-abandonar",
+    "desc": "Limpa seu inventário de peixes após confirmação",
+    "category": "jogos",
+    "usage": [
+      "!pesca-abandonar"
+    ],
+    "module": "FishingGame.js",
+    "tags": [
+      "pesca",
+      "pescaria",
+      "peixe",
+      "iscas",
+      "game",
+      "ranking",
+      "inventario",
+      "rpg"
+    ]
+  },
+  {
+    "cmd": "!comida",
+    "name": "comida",
+    "desc": "Registra o que você acabou de comer ou beber",
+    "category": "utilidades",
+    "usage": [
+      "!comida Almoço: arroz, feijão e frango",
+      "!comida Maçã e suco de laranja"
+    ],
+    "module": "FoodTracker.js",
+    "tags": [
+      "comida",
+      "alimentacao",
+      "dieta",
+      "saude",
+      "refeicao",
+      "tracker",
+      "calorias"
+    ]
+  },
+  {
+    "cmd": "!comida-lista",
+    "name": "comida-lista",
+    "desc": "Lista todas as refeições registradas pelos membros do grupo hoje",
+    "category": "utilidades",
+    "usage": [
+      "!comida-lista"
+    ],
+    "module": "FoodTracker.js",
+    "tags": [
+      "comida",
+      "alimentacao",
+      "dieta",
+      "saude",
+      "refeicao",
+      "tracker",
+      "calorias"
+    ]
+  },
+  {
+    "cmd": "!comida-info",
+    "name": "comida-info",
+    "desc": "Exibe seu resumo e estatísticas alimentares",
+    "category": "utilidades",
+    "usage": [
+      "!comida-info"
+    ],
+    "module": "FoodTracker.js",
+    "tags": [
+      "comida",
+      "alimentacao",
+      "dieta",
+      "saude",
+      "refeicao",
+      "tracker",
+      "calorias"
+    ]
+  },
+  {
+    "cmd": "!0800",
+    "name": "0800",
+    "desc": "Exibe a lista de jogos gratuitos disponíveis no momento para resgate",
+    "category": "jogos",
+    "usage": [
+      "!0800",
+      "!jogos-free",
+      "!jogos-free steam",
+      "!jogos-free epic"
+    ],
+    "module": "GamingFreebies.js",
+    "tags": [
+      "jogos",
+      "games",
+      "gratis",
+      "freebies",
+      "epic games",
+      "steam",
+      "notificacoes",
+      "0800"
+    ]
+  },
+  {
+    "cmd": "!jogos-free-notificar",
+    "name": "jogos-free-notificar",
+    "desc": "Ativa ou desativa avisos automáticos de jogos grátis no grupo (Steam, Epic ou ambas)",
+    "category": "jogos",
+    "usage": [
+      "!jogos-free-notificar",
+      "!jogos-free-notificar epic",
+      "!jogos-free-notificar steam"
+    ],
+    "module": "GamingFreebies.js",
+    "tags": [
+      "jogos",
+      "games",
+      "gratis",
+      "freebies",
+      "epic games",
+      "steam",
+      "notificacoes",
+      "0800"
+    ]
+  },
+  {
+    "cmd": "!jogos-free-frequencia",
+    "name": "jogos-free-frequencia",
+    "desc": "Define a frequência em dias e o turno de envio dos avisos de jogos grátis",
+    "category": "jogos",
+    "usage": [
+      "!jogos-free-frequencia",
+      "!jogos-free-frequencia 7 tarde",
+      "!jogos-free-frequencia diario noite",
+      "!jogos-free-frequencia manha"
+    ],
+    "module": "GamingFreebies.js",
+    "tags": [
+      "jogos",
+      "games",
+      "gratis",
+      "freebies",
+      "epic games",
+      "steam",
+      "notificacoes",
+      "0800"
+    ]
+  },
+  {
+    "cmd": "!status",
+    "name": "status",
+    "desc": "Exibe o status do bot, tempo online, memória e latência",
+    "category": "geral",
+    "usage": [
+      "!status"
+    ],
+    "module": "GeneralCommands.js",
+    "tags": [
+      "geral",
+      "status",
+      "sistema",
+      "ping",
+      "apelido",
+      "avisos",
+      "utilidades"
+    ]
+  },
+  {
+    "cmd": "!avisos",
+    "name": "avisos",
+    "desc": "Exibe o canal de avisos e novidades da comunidade do bot",
+    "category": "geral",
+    "usage": [
+      "!avisos"
+    ],
+    "module": "GeneralCommands.js",
+    "tags": [
+      "geral",
+      "status",
+      "sistema",
+      "ping",
+      "apelido",
+      "avisos",
+      "utilidades"
+    ]
+  },
+  {
+    "cmd": "!apelido",
+    "name": "apelido",
+    "desc": "Define ou altera o seu apelido de exibição no grupo",
+    "category": "geral",
+    "usage": [
+      "!apelido Moothz",
+      "!apelido Rei do Zap"
+    ],
+    "module": "GeneralCommands.js",
+    "tags": [
+      "geral",
+      "status",
+      "sistema",
+      "ping",
+      "apelido",
+      "avisos",
+      "utilidades"
+    ]
+  },
+  {
+    "cmd": "!codigo",
+    "name": "codigo",
+    "desc": "Exibe o link do repositório de código-fonte do bot",
+    "category": "geral",
+    "usage": [
+      "!codigo"
+    ],
+    "module": "GeneralCommands.js",
+    "tags": [
+      "geral",
+      "status",
+      "sistema",
+      "ping",
+      "apelido",
+      "avisos",
+      "utilidades"
+    ]
+  },
+  {
+    "cmd": "!atencao",
+    "name": "atencao",
+    "desc": "Envia um alerta sonoro/visual para chamar a atenção no chat",
+    "category": "geral",
+    "usage": [
+      "!atencao"
+    ],
+    "module": "GeneralCommands.js",
+    "tags": [
+      "geral",
+      "status",
+      "sistema",
+      "ping",
+      "apelido",
+      "avisos",
+      "utilidades"
+    ]
+  },
+  {
+    "cmd": "!gif",
+    "name": "gif",
+    "desc": "Pesquisa e envia um GIF animado do Giphy",
+    "category": "busca",
+    "usage": [
+      "!gif gatinho dancando",
+      "!gif parabens",
+      "!gif risada"
+    ],
+    "module": "GiphyCommands.js",
+    "tags": [
+      "gif",
+      "giphy",
+      "animacao",
+      "memes",
+      "busca"
+    ]
+  },
+  {
+    "cmd": "!convite",
+    "name": "convite",
+    "desc": "Gera o link de convite do grupo atual",
+    "category": "grupo",
+    "usage": [
+      "!convite"
+    ],
+    "module": "GroupCommands.js",
+    "tags": [
+      "grupo",
+      "convite",
+      "apagar",
+      "membros",
+      "interacao"
+    ]
+  },
+  {
+    "cmd": "!grupao",
+    "name": "grupao",
+    "desc": "Exibe a lista de grupos públicos parceiros do bot",
+    "category": "grupo",
+    "usage": [
+      "!grupao"
+    ],
+    "module": "GroupCommands.js",
+    "tags": [
+      "grupo",
+      "convite",
+      "apagar",
+      "membros",
+      "interacao"
+    ]
+  },
+  {
+    "cmd": "!apagar",
+    "name": "apagar",
+    "desc": "Apaga uma mensagem que foi enviada pelo bot (respondendo a ela)",
+    "category": "grupo",
+    "usage": [
+      "!apagar (em resposta a uma mensagem do bot)"
+    ],
+    "module": "GroupCommands.js",
+    "tags": [
+      "grupo",
+      "convite",
+      "apagar",
+      "membros",
+      "interacao"
+    ]
+  },
+  {
+    "cmd": "!horoscopo",
+    "name": "horoscopo",
+    "desc": "Consulta a previsão astrológica diária para o seu signo",
+    "category": "utilidades",
+    "usage": [
+      "!horoscopo aries",
+      "!horoscopo leao",
+      "!horoscopo escorpiao"
+    ],
+    "module": "HoroscopoCommands.js",
+    "tags": [
+      "horoscopo",
+      "signos",
+      "astrologia",
+      "zodiaco",
+      "previsao",
+      "aries",
+      "touro"
+    ]
+  },
+  {
+    "cmd": "!removebg",
+    "name": "removebg",
+    "desc": "Remove o fundo de uma imagem usando inteligência artificial",
+    "category": "midia",
+    "usage": [
+      "!removebg (em resposta a uma foto)"
+    ],
+    "module": "ImageManipulation.js",
+    "tags": [
+      "imagem",
+      "efeitos",
+      "filtros",
+      "removebg",
+      "neon",
+      "pixelate",
+      "oil",
+      "sketch",
+      "distorcer",
+      "fotos"
+    ]
+  },
+  {
+    "cmd": "!distort",
+    "name": "distort",
+    "desc": "Aplica distorção cômica e deformação na imagem",
+    "category": "midia",
+    "usage": [
+      "!distort (em resposta a uma foto)"
+    ],
+    "module": "ImageManipulation.js",
+    "tags": [
+      "imagem",
+      "efeitos",
+      "filtros",
+      "removebg",
+      "neon",
+      "pixelate",
+      "oil",
+      "sketch",
+      "distorcer",
+      "fotos"
+    ]
+  },
+  {
+    "cmd": "!neon",
+    "name": "neon",
+    "desc": "Aplica efeito de iluminação neon sobre a imagem",
+    "category": "midia",
+    "usage": [
+      "!neon (em resposta a uma foto)"
+    ],
+    "module": "ImageManipulation.js",
+    "tags": [
+      "imagem",
+      "efeitos",
+      "filtros",
+      "removebg",
+      "neon",
+      "pixelate",
+      "oil",
+      "sketch",
+      "distorcer",
+      "fotos"
+    ]
+  },
+  {
+    "cmd": "!oil",
+    "name": "oil",
+    "desc": "Transforma a imagem em efeito de pintura a óleo",
+    "category": "midia",
+    "usage": [
+      "!oil (em resposta a uma foto)"
+    ],
+    "module": "ImageManipulation.js",
+    "tags": [
+      "imagem",
+      "efeitos",
+      "filtros",
+      "removebg",
+      "neon",
+      "pixelate",
+      "oil",
+      "sketch",
+      "distorcer",
+      "fotos"
+    ]
+  },
+  {
+    "cmd": "!pixelate",
+    "name": "pixelate",
+    "desc": "Aplica efeito retrô de pixelização na imagem",
+    "category": "midia",
+    "usage": [
+      "!pixelate (em resposta a uma foto)"
+    ],
+    "module": "ImageManipulation.js",
+    "tags": [
+      "imagem",
+      "efeitos",
+      "filtros",
+      "removebg",
+      "neon",
+      "pixelate",
+      "oil",
+      "sketch",
+      "distorcer",
+      "fotos"
+    ]
+  },
+  {
+    "cmd": "!sketch",
+    "name": "sketch",
+    "desc": "Converte a imagem em um desenho a lápis / esboço",
+    "category": "midia",
+    "usage": [
+      "!sketch (em resposta a uma foto)"
+    ],
+    "module": "ImageManipulation.js",
+    "tags": [
+      "imagem",
+      "efeitos",
+      "filtros",
+      "removebg",
+      "neon",
+      "pixelate",
+      "oil",
+      "sketch",
+      "distorcer",
+      "fotos"
+    ]
+  },
+  {
+    "cmd": "!imdb",
+    "name": "imdb",
+    "desc": "Busca informações, nota e sinopse de um filme ou série",
+    "category": "cultura",
+    "usage": [
+      "!imdb Breaking Bad",
+      "!imdb Interestelar",
+      "!imdb O Poderoso Chefao"
+    ],
+    "module": "ImdbCommands.js",
+    "tags": [
+      "filmes",
+      "series",
+      "cinema",
+      "imdb",
+      "tmdb",
+      "filme",
+      "assistir",
+      "sinopse",
+      "nota"
+    ]
+  },
+  {
+    "cmd": "!lastfm",
+    "name": "lastfm",
+    "desc": "Mostra a música que um usuário do Last.fm está ouvindo agora",
+    "category": "cultura",
+    "usage": [
+      "!lastfm seu_usuario",
+      "!lastfm"
+    ],
+    "module": "LastFMCommands.js",
+    "tags": [
+      "musica",
+      "lastfm",
+      "scrobble",
+      "ouuvindo",
+      "faixa",
+      "artista",
+      "album"
+    ]
+  },
+  {
+    "cmd": "!lembrar",
+    "name": "lembrar",
+    "desc": "Cria um novo lembrete com data, hora ou tempo relativo",
+    "category": "utilidades",
+    "usage": [
+      "!lembrar em 10 minutos tirar o lixo",
+      "!lembrar amanha as 14h reuniao importante"
+    ],
+    "module": "LembretesCommands.js",
+    "tags": [
+      "lembrete",
+      "lembrar",
+      "alarme",
+      "agenda",
+      "tempo",
+      "notificacao"
+    ]
+  },
+  {
+    "cmd": "!lembretes",
+    "name": "lembretes",
+    "desc": "Lista todos os seus lembretes ativos",
+    "category": "utilidades",
+    "usage": [
+      "!lembretes"
+    ],
+    "module": "LembretesCommands.js",
+    "tags": [
+      "lembrete",
+      "lembrar",
+      "alarme",
+      "agenda",
+      "tempo",
+      "notificacao"
+    ]
+  },
+  {
+    "cmd": "!l-cancelar",
+    "name": "l-cancelar",
+    "desc": "Cancela um lembrete ativo pelo ID",
+    "category": "utilidades",
+    "usage": [
+      "!l-cancelar 42"
+    ],
+    "module": "LembretesCommands.js",
+    "tags": [
+      "lembrete",
+      "lembrar",
+      "alarme",
+      "agenda",
+      "tempo",
+      "notificacao"
+    ]
+  },
+  {
+    "cmd": "!listas",
+    "name": "listas",
+    "desc": "Mostra todas as listas ativas no grupo",
+    "category": "listas",
+    "usage": [
+      "!listas"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!lc",
+    "name": "lc",
+    "desc": "Cria uma nova lista simples",
+    "category": "listas",
+    "usage": [
+      "!lc Mercado (arroz, feijao, carne)"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!lct",
+    "name": "lct",
+    "desc": "Cria uma lista de tarefas interativa",
+    "category": "listas",
+    "usage": [
+      "!lct Preparativos da festa"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!ld",
+    "name": "ld",
+    "desc": "Deleta uma lista existente",
+    "category": "listas",
+    "usage": [
+      "!ld 1"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!le",
+    "name": "le",
+    "desc": "Exibe os itens detalhados de uma lista",
+    "category": "listas",
+    "usage": [
+      "!le 1"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!ls",
+    "name": "ls",
+    "desc": "Adiciona um novo item a uma lista existente",
+    "category": "listas",
+    "usage": [
+      "!ls 1 Comprar refrigerante"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!lt",
+    "name": "lt",
+    "desc": "Alterna a marcação de conclusão de um item da lista",
+    "category": "listas",
+    "usage": [
+      "!lt 1 2"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!lr",
+    "name": "lr",
+    "desc": "Remove um item específico de uma lista",
+    "category": "listas",
+    "usage": [
+      "!lr 1 2"
+    ],
+    "module": "ListCommands.js",
+    "tags": [
+      "listas",
+      "lista",
+      "compras",
+      "tarefas",
+      "afazeres",
+      "votacao",
+      "organizacao"
+    ]
+  },
+  {
+    "cmd": "!sequencia",
+    "name": "sequencia",
+    "desc": "Inicia um desafio de sequência lógica",
+    "category": "jogos",
+    "usage": [
+      "!sequencia"
+    ],
+    "module": "LogicSequenceGame.js",
+    "tags": [
+      "sequencia",
+      "logica",
+      "raciocinio",
+      "game",
+      "jogos",
+      "ranking",
+      "desafio"
+    ]
+  },
+  {
+    "cmd": "!seq",
+    "name": "seq",
+    "desc": "Envia a resposta para a sequência atual",
+    "category": "jogos",
+    "usage": [
+      "!seq 16",
+      "!seq 42"
+    ],
+    "module": "LogicSequenceGame.js",
+    "tags": [
+      "sequencia",
+      "logica",
+      "raciocinio",
+      "game",
+      "jogos",
+      "ranking",
+      "desafio"
+    ]
+  },
+  {
+    "cmd": "!sequencia-ranking",
+    "name": "sequencia-ranking",
+    "desc": "Exibe o ranking de maiores pontuadores de lógica",
+    "category": "jogos",
+    "usage": [
+      "!sequencia-ranking"
+    ],
+    "module": "LogicSequenceGame.js",
+    "tags": [
+      "sequencia",
+      "logica",
+      "raciocinio",
+      "game",
+      "jogos",
+      "ranking",
+      "desafio"
+    ]
+  },
+  {
+    "cmd": "!lol-build",
+    "name": "lol-build",
+    "desc": "Obtém link com a build atualizada e runas de um campeão do LoL",
+    "category": "jogos",
+    "usage": [
+      "!lol-build Yasuo",
+      "!lol-build Jinx",
+      "!lol-build Ahri"
+    ],
+    "module": "LolBuild.js",
+    "tags": [
+      "lol",
+      "league of legends",
+      "build",
+      "runas",
+      "campeao",
+      "moba",
+      "riot"
+    ]
+  },
+  {
+    "cmd": "!cmd",
+    "name": "cmd",
+    "desc": "Exibe o menu principal com todas as categorias e comandos do bot",
+    "category": "geral",
+    "usage": [
+      "!cmd",
+      "!cmd jogos",
+      "!cmd ia",
+      "!cmd midia"
+    ],
+    "module": "Menu.js",
+    "tags": [
+      "menu",
+      "ajuda",
+      "comandos",
+      "help",
+      "lista de comandos",
+      "navegacao"
+    ]
+  },
+  {
+    "cmd": "!cmd-grupo",
+    "name": "cmd-grupo",
+    "desc": "Exibe os comandos voltados para o uso no grupo",
+    "category": "geral",
+    "usage": [
+      "!cmd-grupo"
+    ],
+    "module": "Menu.js",
+    "tags": [
+      "menu",
+      "ajuda",
+      "comandos",
+      "help",
+      "lista de comandos",
+      "navegacao"
+    ]
+  },
+  {
+    "cmd": "!cmd-gerenciamento",
+    "name": "cmd-gerenciamento",
+    "desc": "Exibe os comandos de administração e gerenciamento do grupo",
+    "category": "geral",
+    "usage": [
+      "!cmd-gerenciamento"
+    ],
+    "module": "Menu.js",
+    "tags": [
+      "menu",
+      "ajuda",
+      "comandos",
+      "help",
+      "lista de comandos",
+      "navegacao"
+    ]
+  },
+  {
+    "cmd": "!metar",
+    "name": "metar",
+    "desc": "Consulta o informe meteorológico de aviação METAR para um aeroporto (Código ICAO)",
+    "category": "utilidades",
+    "usage": [
+      "!metar SBGR",
+      "!metar SBRJ",
+      "!metar SBGL"
+    ],
+    "module": "MetarStatistics.js",
+    "tags": [
+      "metar",
+      "aviacao",
+      "aeroporto",
+      "icao",
+      "tempo",
+      "meteorologia",
+      "voo",
+      "piloto"
+    ]
+  },
+  {
+    "cmd": "!minecraft-servidor",
+    "name": "minecraft-servidor",
+    "desc": "Define o servidor de Minecraft do grupo (apenas admins). Alias: !mine-servidor, !mine-server",
+    "category": "jogos",
+    "usage": [
+      "!minecraft-servidor play.exemplo.com",
+      "!minecraft-servidor play.exemplo.com:25300"
+    ],
+    "module": "MinecraftCommands.js",
+    "tags": [
+      "minecraft",
+      "servidor",
+      "server",
+      "mc",
+      "jogadores",
+      "online",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!minecraft",
+    "name": "minecraft",
+    "desc": "Mostra se o servidor está online, quantos jogadores e seus nicks",
+    "category": "jogos",
+    "usage": [
+      "!minecraft"
+    ],
+    "module": "MinecraftCommands.js",
+    "tags": [
+      "minecraft",
+      "servidor",
+      "server",
+      "mc",
+      "jogadores",
+      "online",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!munews",
+    "name": "munews",
+    "desc": "Exibe as últimas notícias e atualizações dos servidores de Mu Online",
+    "category": "jogos",
+    "usage": [
+      "!munews"
+    ],
+    "module": "MuNewsCommands.js",
+    "tags": [
+      "mu",
+      "munews",
+      "noticias",
+      "mu online",
+      "mmorpg",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!audio",
+    "name": "audio",
+    "desc": "Pesquisa e envia um áudio do site MyInstants",
+    "category": "busca",
+    "usage": [
+      "!audio vinheta globo",
+      "!audio vinheta globo 1",
+      "!audio acertou mizeravi 1"
+    ],
+    "module": "MyInstantsAudioSearch.js",
+    "tags": [
+      "myinstants",
+      "audios",
+      "memes",
+      "sons",
+      "efeitos sonoros",
+      "audio",
+      "som"
+    ]
+  },
+  {
+    "cmd": "!som",
+    "name": "som",
+    "desc": "Pesquisa e envia um áudio do site MyInstants (alias para !audio)",
+    "category": "busca",
+    "usage": [
+      "!som vinheta globo",
+      "!som acertou mizeravi 1"
+    ],
+    "module": "MyInstantsAudioSearch.js",
+    "tags": [
+      "myinstants",
+      "audios",
+      "memes",
+      "sons",
+      "efeitos sonoros",
+      "audio",
+      "som"
+    ]
+  },
+  {
+    "cmd": "!apod",
+    "name": "apod",
+    "desc": "Exibe a Foto Astronômica do Dia da NASA com explicação traduzida",
+    "category": "cultura",
+    "usage": [
+      "!apod"
+    ],
+    "module": "NASA.js",
+    "tags": [
+      "nasa",
+      "espaco",
+      "astronomia",
+      "apod",
+      "planetas",
+      "estrelas",
+      "terra"
+    ]
+  },
+  {
+    "cmd": "!epic",
+    "name": "epic",
+    "desc": "Exibe as fotos mais recentes da Terra capturadas pelo satélite EPIC da NASA",
+    "category": "cultura",
+    "usage": [
+      "!epic"
+    ],
+    "module": "NASA.js",
+    "tags": [
+      "nasa",
+      "espaco",
+      "astronomia",
+      "apod",
+      "planetas",
+      "estrelas",
+      "terra"
+    ]
+  },
+  {
+    "cmd": "!ocr",
+    "name": "ocr",
+    "desc": "Lê e extrai todo o texto contido em uma imagem",
+    "category": "utilidades",
+    "usage": [
+      "!ocr (em resposta a uma foto ou imagem com texto)"
+    ],
+    "module": "OcrCommands.js",
+    "tags": [
+      "ocr",
+      "texto",
+      "extrair texto",
+      "imagem para texto",
+      "leitura",
+      "scan"
+    ]
+  },
+  {
+    "cmd": "!pinto",
+    "name": "pinto",
+    "desc": "Mede seu tamanho do dia e exibe seu resultado",
+    "category": "zoeira",
+    "usage": [
+      "!pinto"
+    ],
+    "module": "PintoGame.js",
+    "tags": [
+      "pinto",
+      "tamanho",
+      "ranking",
+      "zoeira",
+      "brincadeira",
+      "diversao"
+    ]
+  },
+  {
+    "cmd": "!pinto-ranking",
+    "name": "pinto-ranking",
+    "desc": "Exibe o ranking dos maiores e menores tamanhos do grupo",
+    "category": "zoeira",
+    "usage": [
+      "!pinto-ranking"
+    ],
+    "module": "PintoGame.js",
+    "tags": [
+      "pinto",
+      "tamanho",
+      "ranking",
+      "zoeira",
+      "brincadeira",
+      "diversao"
+    ]
+  },
+  {
+    "cmd": "!pinto-reset",
+    "name": "pinto-reset",
+    "desc": "Reseta os registros do jogo no grupo (Apenas Administradores)",
+    "category": "zoeira",
+    "usage": [
+      "!pinto-reset"
+    ],
+    "module": "PintoGame.js",
+    "tags": [
+      "pinto",
+      "tamanho",
+      "ranking",
+      "zoeira",
+      "brincadeira",
+      "diversao"
+    ]
+  },
+  {
+    "cmd": "!placa",
+    "name": "placa",
+    "desc": "Consulta dados e histórico de preço FIPE de um veículo pela placa",
+    "category": "utilidades",
+    "usage": [
+      "!placa ABC1234",
+      "!placa ABC1D23"
+    ],
+    "module": "PlacasCommands.js",
+    "tags": [
+      "placa",
+      "carro",
+      "moto",
+      "veiculo",
+      "fipe",
+      "consulta",
+      "automovel"
+    ]
+  },
+  {
+    "cmd": "!psn",
+    "name": "psn",
+    "desc": "Consulta platinas de uma conta PSN",
+    "category": "jogos",
+    "usage": [
+      "!psn SeuPSNID"
+    ],
+    "module": "PsnCommands.js",
+    "tags": [
+      "psn",
+      "playstation",
+      "sony",
+      "trofeus",
+      "ps4",
+      "ps5",
+      "games",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!qr",
+    "name": "qr",
+    "desc": "Gera uma imagem de QR Code a partir de um texto ou link",
+    "category": "utilidades",
+    "usage": [
+      "!qr https://google.com",
+      "!qr Minha senha wifi"
+    ],
+    "module": "QrCommands.js",
+    "tags": [
+      "qr",
+      "qrcode",
+      "pix",
+      "gerador qr",
+      "codigo"
+    ]
+  },
+  {
+    "cmd": "!qr-pix",
+    "name": "qr-pix",
+    "desc": "Gera um QR Code de cobrança Pix",
+    "category": "utilidades",
+    "usage": [
+      "!qr-pix chave@pix.com 50.00 Descricao"
+    ],
+    "module": "QrCommands.js",
+    "tags": [
+      "qr",
+      "qrcode",
+      "pix",
+      "gerador qr",
+      "codigo"
+    ]
+  },
+  {
+    "cmd": "!raffle <link>",
+    "name": "raffle <link>",
+    "desc": "Consulta o status atual de uma rifa ou ação",
+    "category": "busca",
+    "usage": [
+      "!raffle https://..."
+    ],
+    "module": "Raffles.js",
+    "tags": [
+      "rifa",
+      "sorteio",
+      "bilhetes",
+      "cotas",
+      "premios",
+      "acao"
+    ]
+  },
+  {
+    "cmd": "!raffle-seguir <link>",
+    "name": "raffle-seguir <link>",
+    "desc": "Inicia o monitoramento de uma rifa com alertas automáticos em 10%, 15%, 25%, 50%, 75%, 90%, 99% e 100%",
+    "category": "busca",
+    "usage": [
+      "!raffle-seguir https://..."
+    ],
+    "module": "Raffles.js",
+    "tags": [
+      "rifa",
+      "sorteio",
+      "bilhetes",
+      "cotas",
+      "premios",
+      "acao"
+    ]
+  },
+  {
+    "cmd": "!raffle-parar <link>",
+    "name": "raffle-parar <link>",
+    "desc": "Encerra o monitoramento de uma rifa no grupo",
+    "category": "busca",
+    "usage": [
+      "!raffle-parar https://..."
+    ],
+    "module": "Raffles.js",
+    "tags": [
+      "rifa",
+      "sorteio",
+      "bilhetes",
+      "cotas",
+      "premios",
+      "acao"
+    ]
+  },
+  {
+    "cmd": "!raffle-listar",
+    "name": "raffle-listar",
+    "desc": "Lista todas as rifas atualmente monitoradas pelo grupo",
+    "category": "busca",
+    "usage": [
+      "!raffle-listar"
+    ],
+    "module": "Raffles.js",
+    "tags": [
+      "rifa",
+      "sorteio",
+      "bilhetes",
+      "cotas",
+      "premios",
+      "acao"
+    ]
+  },
+  {
+    "cmd": "!ragnavena",
+    "name": "ragnavena",
+    "desc": "Acessa o menu principal e jogo do RagNavena",
+    "category": "jogos",
+    "usage": [
+      "!ragnavena"
+    ],
+    "module": "RagnarokCommands.js",
+    "tags": [
+      "ragnarok",
+      "ragnavena",
+      "rpg",
+      "jogos",
+      "monstros",
+      "batalha",
+      "classes"
+    ]
+  },
+  {
+    "cmd": "!ragnarok-reset",
+    "name": "ragnarok-reset",
+    "desc": "Reseta os dados do jogo no grupo (Apenas Administradores)",
+    "category": "jogos",
+    "usage": [
+      "!ragnarok-reset"
+    ],
+    "module": "RagnarokCommands.js",
+    "tags": [
+      "ragnarok",
+      "ragnavena",
+      "rpg",
+      "jogos",
+      "monstros",
+      "batalha",
+      "classes"
+    ]
+  },
+  {
+    "cmd": "!faladores",
+    "name": "faladores",
+    "desc": "Exibe o ranking com os membros mais ativos do grupo",
+    "category": "grupo",
+    "usage": [
+      "!faladores"
+    ],
+    "module": "RankingMessages.js",
+    "tags": [
+      "faladores",
+      "ranking",
+      "mensagens",
+      "atividade",
+      "membros",
+      "estatisticas"
+    ]
+  },
+  {
+    "cmd": "!faladores-limpeza",
+    "name": "faladores-limpeza",
+    "desc": "Lista membros inativos que não enviaram mensagens recentes",
+    "category": "grupo",
+    "usage": [
+      "!faladores-limpeza"
+    ],
+    "module": "RankingMessages.js",
+    "tags": [
+      "faladores",
+      "ranking",
+      "mensagens",
+      "atividade",
+      "membros",
+      "estatisticas"
+    ]
+  },
+  {
+    "cmd": "!faladores-reset",
+    "name": "faladores-reset",
+    "desc": "Reseta a contagem de mensagens do grupo (Apenas Administradores)",
+    "category": "grupo",
+    "usage": [
+      "!faladores-reset"
+    ],
+    "module": "RankingMessages.js",
+    "tags": [
+      "faladores",
+      "ranking",
+      "mensagens",
+      "atividade",
+      "membros",
+      "estatisticas"
+    ]
+  },
+  {
+    "cmd": "!faladores-atividade",
+    "name": "faladores-atividade",
+    "desc": "Mostra o rank de atividade recente dos membros (última mensagem vista)",
+    "category": "grupo",
+    "usage": [
+      "!faladores-atividade",
+      "!faladores-atividade completo",
+      "!faladores-atividade nunca",
+      "!faladores-atividade inativos",
+      "!faladores-atividade 7d"
+    ],
+    "module": "RankingMessages.js",
+    "tags": [
+      "faladores",
+      "ranking",
+      "mensagens",
+      "atividade",
+      "membros",
+      "estatisticas"
+    ]
+  },
+  {
+    "cmd": "!casar",
+    "name": "casar",
+    "desc": "Pede um membro do grupo em casamento",
+    "category": "interacao",
+    "usage": [
+      "!casar @fulano"
+    ],
+    "module": "RelacionamentoCommands.js",
+    "tags": [
+      "casamento",
+      "casar",
+      "divorcio",
+      "relacionamento",
+      "amor",
+      "zoeira",
+      "casais",
+      "celibar",
+      "celibato"
+    ]
+  },
+  {
+    "cmd": "!separar",
+    "name": "separar",
+    "desc": "Termina o relacionamento por menção, número da lista ou telefone",
+    "category": "interacao",
+    "usage": [
+      "!separar @fulano",
+      "!separar 1",
+      "!separar 551199999999"
+    ],
+    "module": "RelacionamentoCommands.js",
+    "tags": [
+      "casamento",
+      "casar",
+      "divorcio",
+      "relacionamento",
+      "amor",
+      "zoeira",
+      "casais",
+      "celibar",
+      "celibato"
+    ]
+  },
+  {
+    "cmd": "!celibar",
+    "name": "celibar",
+    "desc": "Termina todos os seus relacionamentos no grupo e adere ao celibato",
+    "category": "interacao",
+    "usage": [
+      "!celibar"
+    ],
+    "module": "RelacionamentoCommands.js",
+    "tags": [
+      "casamento",
+      "casar",
+      "divorcio",
+      "relacionamento",
+      "amor",
+      "zoeira",
+      "casais",
+      "celibar",
+      "celibato"
+    ]
+  },
+  {
+    "cmd": "!divorcio",
+    "name": "divorcio",
+    "desc": "Pede o divórcio do seu parceiro atual no grupo",
+    "category": "interacao",
+    "usage": [
+      "!divorcio"
+    ],
+    "module": "RelacionamentoCommands.js",
+    "tags": [
+      "casamento",
+      "casar",
+      "divorcio",
+      "relacionamento",
+      "amor",
+      "zoeira",
+      "casais",
+      "celibar",
+      "celibato"
+    ]
+  },
+  {
+    "cmd": "!relacionamentos",
+    "name": "relacionamentos",
+    "desc": "Lista todos os casamentos e uniões ativas no grupo",
+    "category": "interacao",
+    "usage": [
+      "!relacionamentos"
+    ],
+    "module": "RelacionamentoCommands.js",
+    "tags": [
+      "casamento",
+      "casar",
+      "divorcio",
+      "relacionamento",
+      "amor",
+      "zoeira",
+      "casais",
+      "celibar",
+      "celibato"
+    ]
+  },
+  {
+    "cmd": "!valorant",
+    "name": "valorant",
+    "desc": "Consulta estatísticas e elo de um jogador de Valorant",
+    "category": "jogos",
+    "usage": [
+      "!valorant Nick#TAG"
+    ],
+    "module": "RiotGamesCommands.js",
+    "tags": [
+      "riot",
+      "lol",
+      "valorant",
+      "wildrift",
+      "elo",
+      "estatisticas",
+      "games"
+    ]
+  },
+  {
+    "cmd": "!roblox",
+    "name": "roblox",
+    "desc": "Consulta informações e foto do avatar de um jogador do Roblox",
+    "category": "jogos",
+    "usage": [
+      "!roblox NomeDoJogador"
+    ],
+    "module": "RobloxCommands.js",
+    "tags": [
+      "roblox",
+      "avatar",
+      "perfil",
+      "games",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!roletarussa",
+    "name": "roletarussa",
+    "desc": "Puxa o gatilho na Roleta Russa do grupo",
+    "category": "jogos",
+    "usage": [
+      "!roletarussa"
+    ],
+    "module": "RoletaRussaCommands.js",
+    "tags": [
+      "roleta",
+      "roletarussa",
+      "tiro",
+      "revólver",
+      "jogo",
+      "timeout",
+      "ranking"
+    ]
+  },
+  {
+    "cmd": "!roleta-ranking",
+    "name": "roleta-ranking",
+    "desc": "Exibe o ranking de sobreviventes e mortes na roleta",
+    "category": "jogos",
+    "usage": [
+      "!roleta-ranking"
+    ],
+    "module": "RoletaRussaCommands.js",
+    "tags": [
+      "roleta",
+      "roletarussa",
+      "tiro",
+      "revólver",
+      "jogo",
+      "timeout",
+      "ranking"
+    ]
+  },
+  {
+    "cmd": "!roleta-tempo",
+    "name": "roleta-tempo",
+    "desc": "Define o tempo em minutos de punição para quem morrer (Admins)",
+    "category": "jogos",
+    "usage": [
+      "!roleta-tempo 5"
+    ],
+    "module": "RoletaRussaCommands.js",
+    "tags": [
+      "roleta",
+      "roletarussa",
+      "tiro",
+      "revólver",
+      "jogo",
+      "timeout",
+      "ranking"
+    ]
+  },
+  {
+    "cmd": "!roleta-silenciar [true|false|toggle]",
+    "name": "roleta-silenciar [true|false|toggle]",
+    "desc": "Ativa ou desativa o silenciamento temporário dos jogadores mortos (Admins)",
+    "category": "jogos",
+    "usage": [
+      "!roleta-silenciar",
+      "!roleta-silenciar false"
+    ],
+    "module": "RoletaRussaCommands.js",
+    "tags": [
+      "roleta",
+      "roletarussa",
+      "tiro",
+      "revólver",
+      "jogo",
+      "timeout",
+      "ranking"
+    ]
+  },
+  {
+    "cmd": "!roleta-reset",
+    "name": "roleta-reset",
+    "desc": "Reseta os dados da roleta russa no grupo (Admins)",
+    "category": "jogos",
+    "usage": [
+      "!roleta-reset"
+    ],
+    "module": "RoletaRussaCommands.js",
+    "tags": [
+      "roleta",
+      "roletarussa",
+      "tiro",
+      "revólver",
+      "jogo",
+      "timeout",
+      "ranking"
+    ]
+  },
+  {
+    "cmd": "!buscar",
+    "name": "buscar",
+    "desc": "Realiza uma pesquisa rápida na internet",
+    "category": "busca",
+    "usage": [
+      "!buscar historia do brasil",
+      "!buscar receita de bolo"
+    ],
+    "module": "SearchCommands.js",
+    "tags": [
+      "busca",
+      "pesquisa",
+      "google",
+      "web",
+      "imagens",
+      "rab",
+      "aviao",
+      "aeronave"
+    ]
+  },
+  {
+    "cmd": "!buscar-img",
+    "name": "buscar-img",
+    "desc": "Pesquisa e envia imagens encontradas na web",
+    "category": "busca",
+    "usage": [
+      "!buscar-img paisagem da serra",
+      "!buscar-img wallpaper 4k"
+    ],
+    "module": "SearchCommands.js",
+    "tags": [
+      "busca",
+      "pesquisa",
+      "google",
+      "web",
+      "imagens",
+      "rab",
+      "aviao",
+      "aeronave"
+    ]
+  },
+  {
+    "cmd": "!rab",
+    "name": "rab",
+    "desc": "Consulta dados de aeronaves pelo prefixo no Registro Aeronáutico Brasileiro da ANAC",
+    "category": "utilidades",
+    "usage": [
+      "!rab PT-ABC",
+      "!rab PR-XYZ"
+    ],
+    "module": "SearchCommands.js",
+    "tags": [
+      "busca",
+      "pesquisa",
+      "google",
+      "web",
+      "imagens",
+      "rab",
+      "aviao",
+      "aeronave"
+    ]
+  },
+  {
+    "cmd": "!slots",
+    "name": "slots",
+    "desc": "Gira a máquina de caça-níqueis",
+    "category": "jogos",
+    "usage": [
+      "!slots"
+    ],
+    "module": "SlotsGame.js",
+    "tags": [
+      "slots",
+      "caca niquel",
+      "cassino",
+      "jogos",
+      "premios",
+      "moedas",
+      "sorte"
+    ]
+  },
+  {
+    "cmd": "!slots-premios",
+    "name": "slots-premios",
+    "desc": "Exibe a sua coleção de prêmios conquistados no caça-níqueis",
+    "category": "jogos",
+    "usage": [
+      "!slots-premios"
+    ],
+    "module": "SlotsGame.js",
+    "tags": [
+      "slots",
+      "caca niquel",
+      "cassino",
+      "jogos",
+      "premios",
+      "moedas",
+      "sorte"
+    ]
+  },
+  {
+    "cmd": "!slots-ranking",
+    "name": "slots-ranking",
+    "desc": "Exibe o ranking dos maiores vencedores do caça-níqueis",
+    "category": "jogos",
+    "usage": [
+      "!slots-ranking"
+    ],
+    "module": "SlotsGame.js",
+    "tags": [
+      "slots",
+      "caca niquel",
+      "cassino",
+      "jogos",
+      "premios",
+      "moedas",
+      "sorte"
+    ]
+  },
+  {
+    "cmd": "!baixar",
+    "name": "baixar",
+    "desc": "Baixa vídeos, áudios ou fotos de links do YouTube, Instagram, TikTok, Twitter/X, Reddit, etc.",
+    "category": "downloaders",
+    "usage": [
+      "!baixar https://vm.tiktok.com/...",
+      "!baixar https://instagram.com/reel/...",
+      "!baixar https://youtu.be/..."
+    ],
+    "module": "SocialMediaDownloader.js",
+    "tags": [
+      "download",
+      "baixar",
+      "video",
+      "audio",
+      "instagram",
+      "tiktok",
+      "youtube",
+      "twitter",
+      "x",
+      "reddit",
+      "soundcloud",
+      "facebook"
+    ]
+  },
+  {
+    "cmd": "!ig",
+    "name": "ig",
+    "desc": "Atalho para baixar publicações, reels e stories do Instagram",
+    "category": "downloaders",
+    "usage": [
+      "!ig https://instagram.com/p/..."
+    ],
+    "module": "SocialMediaDownloader.js",
+    "tags": [
+      "download",
+      "baixar",
+      "video",
+      "audio",
+      "instagram",
+      "tiktok",
+      "youtube",
+      "twitter",
+      "x",
+      "reddit",
+      "soundcloud",
+      "facebook"
+    ]
+  },
+  {
+    "cmd": "!tt",
+    "name": "tt",
+    "desc": "Atalho para baixar vídeos do TikTok",
+    "category": "downloaders",
+    "usage": [
+      "!tt https://tiktok.com/@user/video/..."
+    ],
+    "module": "SocialMediaDownloader.js",
+    "tags": [
+      "download",
+      "baixar",
+      "video",
+      "audio",
+      "instagram",
+      "tiktok",
+      "youtube",
+      "twitter",
+      "x",
+      "reddit",
+      "soundcloud",
+      "facebook"
+    ]
+  },
+  {
+    "cmd": "!tw",
+    "name": "tw",
+    "desc": "Atalho para baixar vídeos e mídias do Twitter / X",
+    "category": "downloaders",
+    "usage": [
+      "!tw https://x.com/user/status/..."
+    ],
+    "module": "SocialMediaDownloader.js",
+    "tags": [
+      "download",
+      "baixar",
+      "video",
+      "audio",
+      "instagram",
+      "tiktok",
+      "youtube",
+      "twitter",
+      "x",
+      "reddit",
+      "soundcloud",
+      "facebook"
+    ]
+  },
+  {
+    "cmd": "!sorteio",
+    "name": "sorteio",
+    "desc": "Inicia um novo sorteio com descrição e tempo ou exibe o sorteio em andamento",
+    "category": "grupo",
+    "usage": [
+      "!sorteio 10m Caixa de chocolate",
+      "!sorteio"
+    ],
+    "module": "SorteioCommands.js",
+    "tags": [
+      "sorteio",
+      "sortear",
+      "rifa",
+      "concurso",
+      "premios",
+      "ganhador"
+    ]
+  },
+  {
+    "cmd": "!sorteio-entrar",
+    "name": "sorteio-entrar",
+    "desc": "Entra no sorteio ativo do grupo",
+    "category": "grupo",
+    "usage": [
+      "!sorteio-entrar"
+    ],
+    "module": "SorteioCommands.js",
+    "tags": [
+      "sorteio",
+      "sortear",
+      "rifa",
+      "concurso",
+      "premios",
+      "ganhador"
+    ]
+  },
+  {
+    "cmd": "!sorteio-sair",
+    "name": "sorteio-sair",
+    "desc": "Sai da lista de participantes do sorteio ativo",
+    "category": "grupo",
+    "usage": [
+      "!sorteio-sair"
+    ],
+    "module": "SorteioCommands.js",
+    "tags": [
+      "sorteio",
+      "sortear",
+      "rifa",
+      "concurso",
+      "premios",
+      "ganhador"
+    ]
+  },
+  {
+    "cmd": "!sortear",
+    "name": "sortear",
+    "desc": "Finaliza o sorteio ativo ou sorteia um membro aleatório do grupo imediatamente",
+    "category": "grupo",
+    "usage": [
+      "!sortear"
+    ],
+    "module": "SorteioCommands.js",
+    "tags": [
+      "sorteio",
+      "sortear",
+      "rifa",
+      "concurso",
+      "premios",
+      "ganhador"
+    ]
+  },
+  {
+    "cmd": "!sorteios",
+    "name": "sorteios",
+    "desc": "Exibe o histórico de sorteios já realizados no grupo",
+    "category": "grupo",
+    "usage": [
+      "!sorteios"
+    ],
+    "module": "SorteioCommands.js",
+    "tags": [
+      "sorteio",
+      "sortear",
+      "rifa",
+      "concurso",
+      "premios",
+      "ganhador"
+    ]
+  },
+  {
+    "cmd": "!sc",
+    "name": "sc",
+    "desc": "Pesquisa e faz download de uma música do SoundCloud",
+    "category": "downloaders",
+    "usage": [
+      "!sc nome da musica ou artista",
+      "!sc https://soundcloud.com/..."
+    ],
+    "module": "SoundCloud.js",
+    "tags": [
+      "soundcloud",
+      "musica",
+      "audio",
+      "musicas",
+      "streaming",
+      "baixar"
+    ]
+  },
+  {
+    "cmd": "!stt",
+    "name": "stt",
+    "desc": "Transcreve uma mensagem de voz ou áudio para texto",
+    "category": "voz",
+    "usage": [
+      "!stt (em resposta a um áudio de voz)"
+    ],
+    "module": "SpeechCommands.js",
+    "tags": [
+      "tts",
+      "stt",
+      "voz",
+      "falar",
+      "transcrever",
+      "audio",
+      "narrador",
+      "rubao",
+      "ravena"
+    ]
+  },
+  {
+    "cmd": "!tts",
+    "name": "tts",
+    "desc": "Converte texto em áudio falado com voz padrão (Ravena)",
+    "category": "voz",
+    "usage": [
+      "!tts Olá pessoal do grupo!"
+    ],
+    "module": "SpeechCommands.js",
+    "tags": [
+      "tts",
+      "stt",
+      "voz",
+      "falar",
+      "transcrever",
+      "audio",
+      "narrador",
+      "rubao",
+      "ravena"
+    ]
+  },
+  {
+    "cmd": "!tts-mulher",
+    "name": "tts-mulher",
+    "desc": "Converte texto em áudio com voz feminina",
+    "category": "voz",
+    "usage": [
+      "!tts-mulher Bom dia a todos!"
+    ],
+    "module": "SpeechCommands.js",
+    "tags": [
+      "tts",
+      "stt",
+      "voz",
+      "falar",
+      "transcrever",
+      "audio",
+      "narrador",
+      "rubao",
+      "ravena"
+    ]
+  },
+  {
+    "cmd": "!tts-homem",
+    "name": "tts-homem",
+    "desc": "Converte texto em áudio com voz masculina",
+    "category": "voz",
+    "usage": [
+      "!tts-homem Atenção para o recado!"
+    ],
+    "module": "SpeechCommands.js",
+    "tags": [
+      "tts",
+      "stt",
+      "voz",
+      "falar",
+      "transcrever",
+      "audio",
+      "narrador",
+      "rubao",
+      "ravena"
+    ]
+  },
+  {
+    "cmd": "!tts-rubao",
+    "name": "tts-rubao",
+    "desc": "Converte texto em áudio com a voz cômica do Rubão do Pontaço",
+    "category": "voz",
+    "usage": [
+      "!tts-rubao Fala minha galera do zapzap!"
+    ],
+    "module": "SpeechCommands.js",
+    "tags": [
+      "tts",
+      "stt",
+      "voz",
+      "falar",
+      "transcrever",
+      "audio",
+      "narrador",
+      "rubao",
+      "ravena"
+    ]
+  },
+  {
+    "cmd": "!tts-narrador",
+    "name": "tts-narrador",
+    "desc": "Converte texto em áudio com voz de narrador de documentário",
+    "category": "voz",
+    "usage": [
+      "!tts-narrador E assim a história começou..."
+    ],
+    "module": "SpeechCommands.js",
+    "tags": [
+      "tts",
+      "stt",
+      "voz",
+      "falar",
+      "transcrever",
+      "audio",
+      "narrador",
+      "rubao",
+      "ravena"
+    ]
+  },
+  {
+    "cmd": "!steam-platinas",
+    "name": "steam-platinas",
+    "desc": "Lista jogos com 100% das conquistas",
+    "category": "jogos",
+    "usage": [
+      "!steam-platinas VanityURLOuSteamID"
+    ],
+    "module": "SteamCommands.js",
+    "tags": [
+      "steam",
+      "platinas",
+      "conquistas",
+      "jogos",
+      "pc",
+      "games",
+      "perfil"
+    ]
+  },
+  {
+    "cmd": "!figa",
+    "name": "figa",
+    "desc": "Faz scraping da figurinha principal no Lovecell (estático ou animado)",
+    "category": "stickers",
+    "usage": [
+      "!figa",
+      "!figa 4",
+      "!figrandom 2",
+      "!figa 37019",
+      "!figa gatos 2"
+    ],
+    "module": "StickerScraper.js",
+    "tags": [
+      "figa",
+      "figrandom",
+      "lovecell",
+      "sticker",
+      "figurinha",
+      "aleatoria",
+      "random",
+      "denunciar",
+      "tags",
+      "categorias"
+    ]
+  },
+  {
+    "cmd": "!figa-tags",
+    "name": "figa-tags",
+    "desc": "Lista todas as categorias/tags de figurinhas disponíveis e a quantidade",
+    "category": "stickers",
+    "usage": [
+      "!figa-tags",
+      "!figa-categoria"
+    ],
+    "module": "StickerScraper.js",
+    "tags": [
+      "figa",
+      "figrandom",
+      "lovecell",
+      "sticker",
+      "figurinha",
+      "aleatoria",
+      "random",
+      "denunciar",
+      "tags",
+      "categorias"
+    ]
+  },
+  {
+    "cmd": "!figa-denunciar",
+    "name": "figa-denunciar",
+    "desc": "Denuncia uma figurinha para o administrador (ou reaja com 🔞)",
+    "category": "stickers",
+    "usage": [
+      "!figa-denunciar (em resposta a uma figurinha)",
+      "Reação: 🔞"
+    ],
+    "module": "StickerScraper.js",
+    "tags": [
+      "figa",
+      "figrandom",
+      "lovecell",
+      "sticker",
+      "figurinha",
+      "aleatoria",
+      "random",
+      "denunciar",
+      "tags",
+      "categorias"
+    ]
+  },
+  {
+    "cmd": "!sticker",
+    "name": "sticker",
+    "desc": "Converte uma imagem, vídeo ou GIF em figurinha do WhatsApp",
+    "category": "stickers",
+    "usage": [
+      "!sticker (com imagem ou em resposta)",
+      "!s"
+    ],
+    "module": "Stickers.js",
+    "tags": [
+      "sticker",
+      "figurinha",
+      "s",
+      "fig",
+      "sq",
+      "sqi",
+      "shq",
+      "stickerhq",
+      "midia",
+      "recorte",
+      "whatsapp"
+    ]
+  },
+  {
+    "cmd": "!shq",
+    "name": "shq",
+    "desc": "Cria figurinha em alta taxa de quadros (22-25 FPS) mantendo as proporções originais",
+    "category": "stickers",
+    "usage": [
+      "!shq (com imagem/vídeo ou em resposta)",
+      "!stickerhq"
+    ],
+    "module": "Stickers.js",
+    "tags": [
+      "sticker",
+      "figurinha",
+      "s",
+      "fig",
+      "sq",
+      "sqi",
+      "shq",
+      "stickerhq",
+      "midia",
+      "recorte",
+      "whatsapp"
+    ]
+  },
+  {
+    "cmd": "!sqi",
+    "name": "sqi",
+    "desc": "Cria figurinha quadrada com enquadramento inteligente do objeto principal via IA",
+    "category": "stickers",
+    "usage": [
+      "!sqi (com imagem ou em resposta)"
+    ],
+    "module": "Stickers.js",
+    "tags": [
+      "sticker",
+      "figurinha",
+      "s",
+      "fig",
+      "sq",
+      "sqi",
+      "shq",
+      "stickerhq",
+      "midia",
+      "recorte",
+      "whatsapp"
+    ]
+  },
+  {
+    "cmd": "!sq",
+    "name": "sq",
+    "desc": "Cria figurinha quadrada cortada no centro",
+    "category": "stickers",
+    "usage": [
+      "!sq (com imagem ou em resposta)"
+    ],
+    "module": "Stickers.js",
+    "tags": [
+      "sticker",
+      "figurinha",
+      "s",
+      "fig",
+      "sq",
+      "sqi",
+      "shq",
+      "stickerhq",
+      "midia",
+      "recorte",
+      "whatsapp"
+    ]
+  },
+  {
+    "cmd": "!sqc",
+    "name": "sqc",
+    "desc": "Cria figurinha quadrada cortando no topo",
+    "category": "stickers",
+    "usage": [
+      "!sqc (com imagem ou em resposta)"
+    ],
+    "module": "Stickers.js",
+    "tags": [
+      "sticker",
+      "figurinha",
+      "s",
+      "fig",
+      "sq",
+      "sqi",
+      "shq",
+      "stickerhq",
+      "midia",
+      "recorte",
+      "whatsapp"
+    ]
+  },
+  {
+    "cmd": "!sqb",
+    "name": "sqb",
+    "desc": "Cria figurinha quadrada cortando na base",
+    "category": "stickers",
+    "usage": [
+      "!sqb (com imagem ou em resposta)"
+    ],
+    "module": "Stickers.js",
+    "tags": [
+      "sticker",
+      "figurinha",
+      "s",
+      "fig",
+      "sq",
+      "sqi",
+      "shq",
+      "stickerhq",
+      "midia",
+      "recorte",
+      "whatsapp"
+    ]
+  },
+  {
+    "cmd": "!sqe",
+    "name": "sqe",
+    "desc": "Cria figurinha quadrada esticada sem cortar as bordas",
+    "category": "stickers",
+    "usage": [
+      "!sqe (com imagem ou em resposta)"
+    ],
+    "module": "Stickers.js",
+    "tags": [
+      "sticker",
+      "figurinha",
+      "s",
+      "fig",
+      "sq",
+      "sqi",
+      "shq",
+      "stickerhq",
+      "midia",
+      "recorte",
+      "whatsapp"
+    ]
+  },
+  {
+    "cmd": "!adedonha",
+    "name": "adedonha",
+    "desc": "Inicia uma nova rodada do jogo Stop / Adedonha",
+    "category": "jogos",
+    "usage": [
+      "!adedonha",
+      "!stop"
+    ],
+    "module": "StopGame.js",
+    "tags": [
+      "stop",
+      "adedonha",
+      "jogos",
+      "palavras",
+      "diversao",
+      "letras"
+    ]
+  },
+  {
+    "cmd": "!streams",
+    "name": "streams",
+    "desc": "Lista todos os canais configurados para monitoramento no grupo",
+    "category": "streams",
+    "usage": [
+      "!streams"
+    ],
+    "module": "StreamCommands.js",
+    "tags": [
+      "stream",
+      "twitch",
+      "kick",
+      "youtube",
+      "live",
+      "streamers",
+      "transmissao"
+    ]
+  },
+  {
+    "cmd": "!streamers",
+    "name": "streamers",
+    "desc": "Lista os canais monitorados que estão ao vivo agora",
+    "category": "streams",
+    "usage": [
+      "!streamers"
+    ],
+    "module": "StreamCommands.js",
+    "tags": [
+      "stream",
+      "twitch",
+      "kick",
+      "youtube",
+      "live",
+      "streamers",
+      "transmissao"
+    ]
+  },
+  {
+    "cmd": "!live",
+    "name": "live",
+    "desc": "Consulta o status e informações de um canal da Twitch",
+    "category": "streams",
+    "usage": [
+      "!live gaules",
+      "!live alanzoka"
+    ],
+    "module": "StreamCommands.js",
+    "tags": [
+      "stream",
+      "twitch",
+      "kick",
+      "youtube",
+      "live",
+      "streamers",
+      "transmissao"
+    ]
+  },
+  {
+    "cmd": "!live-kick",
+    "name": "live-kick",
+    "desc": "Consulta o status e informações de um canal do Kick",
+    "category": "streams",
+    "usage": [
+      "!live-kick nome_do_canal"
+    ],
+    "module": "StreamCommands.js",
+    "tags": [
+      "stream",
+      "twitch",
+      "kick",
+      "youtube",
+      "live",
+      "streamers",
+      "transmissao"
+    ]
+  },
+  {
+    "cmd": "!topstreams",
+    "name": "topstreams",
+    "desc": "Exibe as transmissões com maior audiência no momento",
+    "category": "streams",
+    "usage": [
+      "!topstreams"
+    ],
+    "module": "StreamCommands.js",
+    "tags": [
+      "stream",
+      "twitch",
+      "kick",
+      "youtube",
+      "live",
+      "streamers",
+      "transmissao"
+    ]
+  },
+  {
+    "cmd": "!resumo",
+    "name": "resumo",
+    "desc": "Gera um resumo das conversas recentes e assuntos debatidos no grupo",
+    "category": "ia",
+    "usage": [
+      "!resumo"
+    ],
+    "module": "SummaryCommands.js",
+    "tags": [
+      "resumo",
+      "interagir",
+      "conversa",
+      "ia",
+      "mensagens",
+      "grupo"
+    ]
+  },
+  {
+    "cmd": "!interagir",
+    "name": "interagir",
+    "desc": "Faz o bot interagir e comentar sobre os tópicos atuais da conversa",
+    "category": "ia",
+    "usage": [
+      "!interagir"
+    ],
+    "module": "SummaryCommands.js",
+    "tags": [
+      "resumo",
+      "interagir",
+      "conversa",
+      "ia",
+      "mensagens",
+      "grupo"
+    ]
+  },
+  {
+    "cmd": "!tarot",
+    "name": "tarot",
+    "desc": "Realiza uma tiragem de carta de Tarô com seu significado",
+    "category": "jogos",
+    "usage": [
+      "!tarot"
+    ],
+    "module": "TarotGame.js",
+    "tags": [
+      "tarot",
+      "taro",
+      "cartomante",
+      "misticismo",
+      "futuro",
+      "destino",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!traduzir",
+    "name": "traduzir",
+    "desc": "Traduz um texto citado ou informado para o idioma desejado",
+    "category": "utilidades",
+    "usage": [
+      "!traduzir en Olá mundo",
+      "!traduzir pt (em resposta a uma mensagem)"
+    ],
+    "module": "TranslationCommands.js",
+    "tags": [
+      "traduzir",
+      "traducao",
+      "idiomas",
+      "ingles",
+      "espanhol",
+      "portugues",
+      "translate"
+    ]
+  },
+  {
+    "cmd": "!waifus / !munae",
+    "name": "waifus / !munae",
+    "desc": "Explica as mecânicas do jogo e lista todos os comandos e filtros disponíveis",
+    "category": "mudae",
+    "usage": [
+      "!waifus",
+      "!munae",
+      "!mu-ajuda"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-roll",
+    "name": "mu-roll",
+    "desc": "Sorteia um personagem aleatório para o grupo (waifus e husbandos)",
+    "category": "mudae",
+    "usage": [
+      "!mu-roll",
+      "!mu-r",
+      "!mu-rollm (só homens)",
+      "!mu-rollf (só mulheres)"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-casar",
+    "name": "mu-casar",
+    "desc": "Casa com o personagem recém-sorteado dentro da janela de 300 segundos",
+    "category": "mudae",
+    "usage": [
+      "!mu-casar",
+      "!mu-c",
+      "!mu-casar rem-re-zero"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-diario",
+    "name": "mu-diario",
+    "desc": "Resgata a recompensa diária de Zinthos (💜)",
+    "category": "mudae",
+    "usage": [
+      "!mu-diario",
+      "!mu-dz",
+      "!mu-dk"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-harem",
+    "name": "mu-harem",
+    "desc": "Lista os personagens que você possui em seu harém",
+    "category": "mudae",
+    "usage": [
+      "!mu-harem",
+      "!mu-h 2"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-saldo",
+    "name": "mu-saldo",
+    "desc": "Consulta seu saldo atual de Zinthos (💜)",
+    "category": "mudae",
+    "usage": [
+      "!mu-saldo",
+      "!mu-zinthos",
+      "!mu-z",
+      "!mu-k"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-wishlist",
+    "name": "mu-wishlist",
+    "desc": "Lista seus personagens desejados (até 100) e calcula a chance de drop no roll",
+    "category": "mudae",
+    "usage": [
+      "!mu-wishlist",
+      "!mu-desejar <id>",
+      "!mu-removerdesejo <id>"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-chances",
+    "name": "mu-chances",
+    "desc": "Mostra as probabilidades de drop por categoria de personagem e o bônus da Wishlist",
+    "category": "mudae",
+    "usage": [
+      "!mu-chances",
+      "!mu-taxas",
+      "!mu-prob"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-personagens",
+    "name": "mu-personagens",
+    "desc": "Busca personagens cadastrados no catálogo por nome ou série",
+    "category": "mudae",
+    "usage": [
+      "!mu-personagens Frieren",
+      "!mu-chars Naruto"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-ranking",
+    "name": "mu-ranking",
+    "desc": "Painel de líderes consolidado (Zinthos e Casamentos por raridade). Use 'all' para ver todos.",
+    "category": "mudae",
+    "usage": [
+      "!mu-ranking",
+      "!mu-rank zinthos all",
+      "!mu-rank casamentos all"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-denunciar",
+    "name": "mu-denunciar",
+    "desc": "Denuncia um personagem problemático para a equipe de moderação e remoção",
+    "category": "mudae",
+    "usage": [
+      "!mu-denunciar (em resposta ao roll)",
+      "Reação: ⛔",
+      "!mu-denunciar <id ou nome>"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-cooldowns",
+    "name": "mu-cooldowns",
+    "desc": "Verifica os tempos restantes para poder rolar, casar ou resgatar o diário",
+    "category": "mudae",
+    "usage": [
+      "!mu-cooldowns",
+      "!mu-cd"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-adm / !mu-admin",
+    "name": "mu-adm / !mu-admin",
+    "desc": "Gera e envia no privado o link temporário (30 min) para gerenciar harém, wishlist e sugerir fotos/raridades",
+    "category": "mudae",
+    "usage": [
+      "!mu-adm",
+      "!mu-admin"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!mu-share / !mu-compartilhar",
+    "name": "mu-share / !mu-compartilhar",
+    "desc": "Exibe o link público da sua coleção/harém para compartilhar com amigos",
+    "category": "mudae",
+    "usage": [
+      "!mu-share",
+      "!mu-compartilhar"
+    ],
+    "module": "WaifuCommands.js",
+    "tags": [
+      "waifu",
+      "mudae",
+      "munae",
+      "jogo",
+      "anime",
+      "harem",
+      "zinthos",
+      "kakera",
+      "roleta",
+      "casamento"
+    ]
+  },
+  {
+    "cmd": "!clima",
+    "name": "clima",
+    "desc": "Consulta a previsão do tempo detalhada para uma cidade",
+    "category": "utilidades",
+    "usage": [
+      "!clima Belo Horizonte",
+      "!clima Salvador",
+      "!clima Lisboa"
+    ],
+    "module": "WeatherMeteo.js",
+    "tags": [
+      "clima",
+      "tempo",
+      "previsao",
+      "open-meteo",
+      "meteorologia",
+      "chuva"
+    ]
+  },
+  {
+    "cmd": "!wiki",
+    "name": "wiki",
+    "desc": "Pesquisa um termo ou artigo na Wikipedia",
+    "category": "busca",
+    "usage": [
+      "!wiki Albert Einstein",
+      "!wiki Sistema Solar",
+      "!wiki Inteligência Artificial"
+    ],
+    "module": "WikipediaCommands.js",
+    "tags": [
+      "wiki",
+      "wikipedia",
+      "enciclopedia",
+      "busca",
+      "artigo",
+      "informacao"
+    ]
+  },
+  {
+    "cmd": "!wr-build",
+    "name": "wr-build",
+    "desc": "Obtém link com a build atualizada de um campeão do Wild Rift",
+    "category": "jogos",
+    "usage": [
+      "!wr-build Jinx",
+      "!wr-build Zed",
+      "!wr-build Lux"
+    ],
+    "module": "WildRiftBuild.js",
+    "tags": [
+      "wildrift",
+      "wr",
+      "build",
+      "lol",
+      "riot",
+      "mobile",
+      "games"
+    ]
+  },
+  {
+    "cmd": "!yt",
+    "name": "yt",
+    "desc": "Baixa um vídeo do YouTube em formato MP4",
+    "category": "downloaders",
+    "usage": [
+      "!yt https://youtu.be/...",
+      "!yt nome do video"
+    ],
+    "module": "YoutubeDownloader.js",
+    "tags": [
+      "youtube",
+      "yt",
+      "musica",
+      "video",
+      "download",
+      "letras",
+      "audio"
+    ]
+  },
+  {
+    "cmd": "!sr",
+    "name": "sr",
+    "desc": "Baixa o áudio de um vídeo do YouTube em formato MP3",
+    "category": "downloaders",
+    "usage": [
+      "!sr https://youtu.be/...",
+      "!sr nome da musica"
+    ],
+    "module": "YoutubeDownloader.js",
+    "tags": [
+      "youtube",
+      "yt",
+      "musica",
+      "video",
+      "download",
+      "letras",
+      "audio"
+    ]
+  },
+  {
+    "cmd": "!letra",
+    "name": "letra",
+    "desc": "Busca e exibe a letra de uma música",
+    "category": "downloaders",
+    "usage": [
+      "!letra Bohemian Rhapsody",
+      "!letra Legião Urbana Tempo Perdido"
+    ],
+    "module": "YoutubeDownloader.js",
+    "tags": [
+      "youtube",
+      "yt",
+      "musica",
+      "video",
+      "download",
+      "letras",
+      "audio"
+    ]
+  },
+  {
+    "cmd": "!violencia",
+    "name": "violencia",
+    "desc": "Pratica um ato cômico de violência contra outro membro",
+    "category": "zoeira",
+    "usage": [
+      "!violencia @fulano"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!morreu",
+    "name": "morreu",
+    "desc": "Envia meme de anúncio fúnebre zoeiro",
+    "category": "zoeira",
+    "usage": [
+      "!morreu @fulano"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!boleto",
+    "name": "boleto",
+    "desc": "Escolhe um membro do grupo aleatoriamente para pagar um boleto",
+    "category": "zoeira",
+    "usage": [
+      "!boleto"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!clonarcartao",
+    "name": "clonarcartao",
+    "desc": "Simula uma clonagem de cartão para pagar o agiota",
+    "category": "zoeira",
+    "usage": [
+      "!clonarcartao @fulano"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!presente",
+    "name": "presente",
+    "desc": "Envia um presente zoeiro da internet para alguém",
+    "category": "zoeira",
+    "usage": [
+      "!presente @fulano"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!pix",
+    "name": "pix",
+    "desc": "Simula uma transferência fictícia pelo Ravenabank",
+    "category": "zoeira",
+    "usage": [
+      "!pix 1000 @fulano"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!aniversario",
+    "name": "aniversario",
+    "desc": "Parabeniza um aniversariante do grupo em grande estilo",
+    "category": "zoeira",
+    "usage": [
+      "!aniversario @fulano"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!hora",
+    "name": "hora",
+    "desc": "Informa a hora e a data atual com precisão aproximada",
+    "category": "zoeira",
+    "usage": [
+      "!hora",
+      "!data"
+    ],
+    "module": "ZueiraCommands.js",
+    "tags": [
+      "zoeira",
+      "humor",
+      "brincadeiras",
+      "memes",
+      "pix",
+      "aniversario",
+      "boleto",
+      "violencia",
+      "hora",
+      "data"
+    ]
+  },
+  {
+    "cmd": "!g-pin",
+    "name": "pin",
+    "desc": "Fixa a mensagem marcada (em resposta)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-pin"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-promover",
+    "name": "promover",
+    "desc": "Transforma pessoas mencionadas em administradores do grupo (máx 10)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-promover @usuario"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-rebaixar",
+    "name": "rebaixar",
+    "desc": "Remove privilégios de administrador das pessoas mencionadas (máx 10)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-rebaixar @usuario"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-banir",
+    "name": "banir",
+    "desc": "Remove pessoas mencionadas do grupo e comunidade, impedindo reentrada (máx 5) ou lista banidos",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-banir @usuario",
+      "!g-banir"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-desbanir",
+    "name": "desbanir",
+    "desc": "Remove o ban de uma pessoa pelo mention, número ou LID",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-desbanir 5511999999999",
+      "!g-desbanir @usuario"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setNome",
+    "name": "setnome",
+    "desc": "ID/Nome do grupo (nome stickers, gerenciamento)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setNome"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setPrefixo",
+    "name": "setprefixo",
+    "desc": "Altera o prefixo de comandos do *grupo* (padrão !)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setPrefixo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setCustomSemPrefixo",
+    "name": "setcustomsemprefixo",
+    "desc": "Faz com que comandos personalizados não precisem de prefixo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setCustomSemPrefixo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setBoasvindas",
+    "name": "setboasvindas",
+    "desc": "Mensagem quando alguém entra no grupo. Você pode usar as variáveis {pessoa",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setBoasvindas"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-delBoasvindas",
+    "name": "delboasvindas",
+    "desc": "Remove um tipo de mídia específico da mensagem de boas-vindas (text, image, audio, video, sticker)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-delBoasvindas"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setDespedida",
+    "name": "setdespedida",
+    "desc": "Mensagem quando alguém sai do grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setDespedida"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-delDespedida",
+    "name": "deldespedida",
+    "desc": "Remove um tipo de mídia específico da mensagem de despedida (text, image, audio, video, sticker)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-delDespedida"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-autoStt",
+    "name": "autostt",
+    "desc": "Ativa/desativa conversão automática de voz para texto",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-autoStt"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-info",
+    "name": "info",
+    "desc": "Mostra informações detalhadas do grupo (debug)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-info"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-manage",
+    "name": "manage",
+    "desc": "Ativa o gerenciamento do grupo pelo PV do bot",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-manage"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setAutoTranslate",
+    "name": "setautotranslate",
+    "desc": "Define o idioma para tradução automática de todas as respostas do bot (Ex: Spanish (ES))",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setAutoTranslate"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-addCmd",
+    "name": "addcmd",
+    "desc": "Cria um comando personalizado",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-addCmd"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-addCmdReply",
+    "name": "addcmdreply",
+    "desc": "Adiciona outra resposta a um comando existente",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-addCmdReply"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-delCmd",
+    "name": "delcmd",
+    "desc": "Exclui um comando personalizado",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-delCmd"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-enable",
+    "name": "cmd-enable",
+    "desc": "Habilita comando (comandos personalizados)",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-enable"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-disable",
+    "name": "cmd-disable",
+    "desc": "Desabilita comando (comandos personalizados)",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-disable"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-setPV",
+    "name": "cmd-setpv",
+    "desc": "A resposta do comando será enviada no PV (comandos personalizados)",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-setPV"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-enviarTudo",
+    "name": "cmd-enviartudo",
+    "desc": "Envia todas as respostas do comando (se houver mais de uma)",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-enviarTudo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-responder",
+    "name": "cmd-responder",
+    "desc": "Ativa/Desativa se o comando deve responder citando a mensagem",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-responder"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-react",
+    "name": "cmd-react",
+    "desc": "Reaçao quando usar o comando",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-react"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-startReact",
+    "name": "cmd-startreact",
+    "desc": "Reaçao pré-comando (útil para APIs, como loading)",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-startReact"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-setAdm",
+    "name": "cmd-setadm",
+    "desc": "Define que apenas admins podem usar um comando",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-setAdm"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-setInteragir",
+    "name": "cmd-setinteragir",
+    "desc": "Define que comando seja usado nas interações aleatórias",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-setInteragir"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-cd",
+    "name": "cmd-cd",
+    "desc": "Define o cooldown (em segundos) de um comando personalizado. Uso: !g-cmd-cd <comando> <segundos>",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-cd"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-setHoras",
+    "name": "cmd-sethoras",
+    "desc": "Define horários permitidos para um comando",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-setHoras"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-cmd-setDias",
+    "name": "cmd-setdias",
+    "desc": "Define dias permitidos para um comando",
+    "category": "custom-cmds",
+    "usage": [
+      "!g-cmd-setDias"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-palavra",
+    "name": "filtro-palavra",
+    "desc": "Detecta e Apaga mensagens com a palavra/frase especificada",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-palavra"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-regex",
+    "name": "filtro-regex",
+    "desc": "Detecta e Apaga mensagens que correspondam à expressão regular (regex) especificada",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-regex \\b(palavra1|palavra2)\\b",
+      "!g-filtro-regex /padrão/i"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-links",
+    "name": "filtro-links",
+    "desc": "Detecta e Apaga mensagens com links",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-links"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-permitirLink",
+    "name": "filtro-permitirlink",
+    "desc": "Adiciona/remove ou lista domínios e padrões de links permitidos",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-permitirLink",
+      "!g-filtro-permitirLink terra.com.br",
+      "!g-filtro-permitirLink *youtube*"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-linksConfiaveis",
+    "name": "filtro-linksconfiaveis",
+    "desc": "Adiciona ou remove principais sites confiáveis da lista de links permitidos",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-linksConfiaveis",
+      "!g-filtro-linksConfiaveis remover"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-permitirAdm",
+    "name": "filtro-permitiradm",
+    "desc": "Habilita/desabilita a filtragem de mensagens de administradores do grupo",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-permitirAdm"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-pessoa",
+    "name": "filtro-pessoa",
+    "desc": "Detecta e Apaga mensagens desta pessoa (Marcar com @)",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-pessoa"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-filtro-nsfw",
+    "name": "filtro-nsfw",
+    "desc": "Ativa/desativa ou define a intensidade (0-100) do filtro NSFW",
+    "category": "filtros",
+    "usage": [
+      "!g-filtro-nsfw",
+      "!g-filtro-nsfw 30"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-banirSpammers",
+    "name": "banirspammers",
+    "desc": "Ativa/desativa o monitoramento e banimento de spammers (DDI 62/63/380) no grupo",
+    "category": "filtros",
+    "usage": [
+      "!g-banirSpammers"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-ignorar",
+    "name": "ignorar",
+    "desc": "O bot irá ignorar as mensagens desta pessoa",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-ignorar"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-mute",
+    "name": "mute",
+    "desc": "Desativa/ativa comando com a palavra especificada",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-mute"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-muteCategoria [categoria]",
+    "name": "mutecategoria [categoria]",
+    "desc": "Desativa/ativa todos os comandos da categoria especificada (ex: canais, outros, jogos, downloaders, ia, etc)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-muteCategoria canais",
+      "!g-muteCategoria outros"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-customAdmin",
+    "name": "customadmin",
+    "desc": "Adiciona pessoas como administradoras fixas do bot no grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-customAdmin"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-pausar",
+    "name": "pausar",
+    "desc": "Pausa/retoma a atividade do bot no grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-pausar"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-interagir-cmd",
+    "name": "interagir-cmd",
+    "desc": "Ativa/desativa interações automáticas do bot usando comandos do grupo",
+    "category": "interacao",
+    "usage": [
+      "!g-interagir-cmd"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-interagir-cd",
+    "name": "interagir-cd",
+    "desc": "Define o tempo de espera entre interações automáticas",
+    "category": "interacao",
+    "usage": [
+      "!g-interagir-cd"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-interagir-chance",
+    "name": "interagir-chance",
+    "desc": "Define a chance de ocorrer interações automáticas",
+    "category": "interacao",
+    "usage": [
+      "!g-interagir-chance"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-interagir-proporcao",
+    "name": "interagir-proporcao",
+    "desc": "Define a proporção entre comandos e IA para interações automáticas",
+    "category": "interacao",
+    "usage": [
+      "!g-interagir-proporcao"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-fechar",
+    "name": "fechar",
+    "desc": "Fecha o grupo ou agenda fechamento automático",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-fechar",
+      "!g-fechar 13:30",
+      "!g-fechar 13:30 sex",
+      "!g-fechar 13:30 sex 🔒 Boa noite!"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-fechar-lista",
+    "name": "fechar-lista",
+    "desc": "Lista agendamentos de fechamento do grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-fechar-lista"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-fechar-del",
+    "name": "fechar-del",
+    "desc": "Remove agendamento de fechamento pelo ID",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-fechar-del A"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-abrir",
+    "name": "abrir",
+    "desc": "Abre o grupo ou agenda abertura automática",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-abrir",
+      "!g-abrir 07:30",
+      "!g-abrir 07:30 seg",
+      "!g-abrir 07:30 seg 🔓 Bom dia!"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-abrir-lista",
+    "name": "abrir-lista",
+    "desc": "Lista agendamentos de abertura do grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-abrir-lista"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-abrir-del",
+    "name": "abrir-del",
+    "desc": "Remove agendamento de abertura pelo ID",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-abrir-del A"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-notificar-grupoFechado",
+    "name": "notificar-grupofechado",
+    "desc": "Ativa/desativa a notificação quando o grupo é fechado",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-notificar-grupoFechado"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-notificar-grupoAberto",
+    "name": "notificar-grupoaberto",
+    "desc": "Ativa/desativa a notificação quando o grupo é aberto",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-notificar-grupoAberto"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setPersonalidade",
+    "name": "setpersonalidade",
+    "desc": "Define uma personalidade para os comandos de IA (max. 1500 caracteres)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setPersonalidade"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setApelido",
+    "name": "setapelido",
+    "desc": "Define apelido de *outro membro* no grupo (@marcar_pessoa)",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setApelido"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-canal",
+    "name": "twitch-canal",
+    "desc": "Adiciona/remove canal da Twitch para monitoramento",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-canal"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-mudarTitulo",
+    "name": "twitch-mudartitulo",
+    "desc": "Ativa/desativa mudança de título do grupo para eventos da Twitch",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-mudarTitulo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-titulo",
+    "name": "twitch-titulo",
+    "desc": "Define título do grupo para eventos de canal da Twitch",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-titulo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-fotoGrupo",
+    "name": "twitch-fotogrupo",
+    "desc": "Define foto do grupo para eventos de canal da Twitch",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-fotoGrupo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-midia",
+    "name": "twitch-midia",
+    "desc": "Define mídia para notificação de canal da Twitch",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-midia"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-midia-del",
+    "name": "twitch-midia-del",
+    "desc": "Remove mídia específica da notificação de canal da Twitch",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-midia-del"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-usarIA",
+    "name": "twitch-usaria",
+    "desc": "Ativa/desativa uso de IA para gerar mensagens de notificação",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-usarIA"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-usarThumbnail",
+    "name": "twitch-usarthumbnail",
+    "desc": "Ativa/desativa o envio da thumbnail da stream junto com o texto",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-usarThumbnail"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-marcar",
+    "name": "twitch-marcar",
+    "desc": "Ativa/desativa menção a todos os membros nas notificações de canal da Twitch",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-marcar"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-twitch-encaminharCanal",
+    "name": "twitch-encaminharcanal",
+    "desc": "Ativa/desativa encaminhamento de notificações da Twitch para canal do WhatsApp seguido",
+    "category": "streams",
+    "usage": [
+      "!g-twitch-encaminharCanal <canalStream> <nomeCanalSeguido>"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-canal",
+    "name": "kick-canal",
+    "desc": "Adiciona/remove canal do Kick para monitoramento",
+    "category": "streams",
+    "usage": [
+      "!g-kick-canal"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-mudarTitulo",
+    "name": "kick-mudartitulo",
+    "desc": "Ativa/desativa mudança de título do grupo para eventos do Kick",
+    "category": "streams",
+    "usage": [
+      "!g-kick-mudarTitulo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-titulo",
+    "name": "kick-titulo",
+    "desc": "Define título do grupo para eventos de canal do Kick",
+    "category": "streams",
+    "usage": [
+      "!g-kick-titulo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-fotoGrupo",
+    "name": "kick-fotogrupo",
+    "desc": "Define foto do grupo para eventos de canal do Kick",
+    "category": "streams",
+    "usage": [
+      "!g-kick-fotoGrupo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-midia",
+    "name": "kick-midia",
+    "desc": "Define mídia para notificação de canal do Kick",
+    "category": "streams",
+    "usage": [
+      "!g-kick-midia"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-midia-del",
+    "name": "kick-midia-del",
+    "desc": "Remove mídia específica da notificação de canal do Kick",
+    "category": "streams",
+    "usage": [
+      "!g-kick-midia-del"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-usarIA",
+    "name": "kick-usaria",
+    "desc": "Ativa/desativa uso de IA para gerar mensagens de notificação",
+    "category": "streams",
+    "usage": [
+      "!g-kick-usarIA"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-usarThumbnail",
+    "name": "kick-usarthumbnail",
+    "desc": "Ativa/desativa o envio da thumbnail da stream junto com o texto",
+    "category": "streams",
+    "usage": [
+      "!g-kick-usarThumbnail"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-marcar",
+    "name": "kick-marcar",
+    "desc": "Ativa/desativa menção a todos os membros nas notificações de canal do Kick",
+    "category": "streams",
+    "usage": [
+      "!g-kick-marcar"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-kick-encaminharCanal",
+    "name": "kick-encaminharcanal",
+    "desc": "Ativa/desativa encaminhamento de notificações do Kick para canal do WhatsApp seguido",
+    "category": "streams",
+    "usage": [
+      "!g-kick-encaminharCanal <canalStream> <nomeCanalSeguido>"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-canal",
+    "name": "youtube-canal",
+    "desc": "Adiciona/remove canal do YouTube para monitoramento",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-canal"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-mudarTitulo",
+    "name": "youtube-mudartitulo",
+    "desc": "Ativa/desativa mudança de título do grupo para eventos do YouTube",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-mudarTitulo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-titulo",
+    "name": "youtube-titulo",
+    "desc": "Define título do grupo para eventos de canal do YouTube",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-titulo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-fotoGrupo",
+    "name": "youtube-fotogrupo",
+    "desc": "Define foto do grupo para eventos de canal do YouTube",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-fotoGrupo"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-midia",
+    "name": "youtube-midia",
+    "desc": "Define mídia para notificações de novos vídeos ou lives do YouTube",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-midia [video|on|off] <canal>",
+      "!g-youtube-midia <canal> (padrão: novos vídeos)",
+      "!g-youtube-midia on <canal> (lives online)",
+      "!g-youtube-midia off <canal> (lives offline)"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-midia-del",
+    "name": "youtube-midia-del",
+    "desc": "Remove mídia específica de vídeo ou live do YouTube",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-midia-del [video|on|off] <tipo> <canal>"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-usarIA",
+    "name": "youtube-usaria",
+    "desc": "Ativa/desativa uso de IA para gerar mensagens de notificação",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-usarIA"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-usarThumbnail",
+    "name": "youtube-usarthumbnail",
+    "desc": "Ativa/desativa o envio da thumbnail da stream junto com o texto",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-usarThumbnail"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-marcar",
+    "name": "youtube-marcar",
+    "desc": "Ativa/desativa menção a todos os membros nas notificações de canal do YouTube",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-marcar"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-youtube-encaminharCanal",
+    "name": "youtube-encaminharcanal",
+    "desc": "Ativa/desativa encaminhamento de notificações do YouTube para canal do WhatsApp seguido",
+    "category": "streams",
+    "usage": [
+      "!g-youtube-encaminharCanal <canalStream> <nomeCanalSeguido>"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-variaveis",
+    "name": "variaveis",
+    "desc": "Lista todas as variáveis disponíveis para comandos personalizados",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-variaveis"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-painel",
+    "name": "painel",
+    "desc": "Gera um link para gerenciar o bot via web",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-painel"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-setWebhook",
+    "name": "setwebhook",
+    "desc": "Cria ou atualiza um webhook para este grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-setWebhook"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-delWebhook",
+    "name": "delwebhook",
+    "desc": "Apaga um webhook deste grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-delWebhook"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-advertir",
+    "name": "advertir",
+    "desc": "Adiciona uma advertência aos membros mencionados",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-advertir"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-advertencias",
+    "name": "advertencias",
+    "desc": "Lista as advertências atuais do grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-advertencias"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-limpar-advertencias",
+    "name": "limpar-advertencias",
+    "desc": "Remove as advertências dos membros mencionados",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-limpar-advertencias"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-streamRefresh",
+    "name": "streamrefresh",
+    "desc": "Reseta a lista de bots ativos/ignorados para as notificações de stream",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-streamRefresh"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-dossie",
+    "name": "dossie",
+    "desc": "Exibe o histórico de dossiês deste grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-dossie"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-copiarCmds",
+    "name": "copiarcmds",
+    "desc": "Copia os comandos do grupoOrigem pro grupoDestino",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-copiarCmds"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!g-regras",
+    "name": "regras",
+    "desc": "Define, exibe ou remove as regras deste grupo",
+    "category": "gerenciamento",
+    "usage": [
+      "!g-regras",
+      "!g-regras <texto>",
+      "!g-regras (em resposta a uma mensagem)"
+    ],
+    "module": "Management.js",
+    "tags": [
+      "gerenciamento",
+      "admin",
+      "grupo",
+      "configuracao",
+      "moderação",
+      "filtros",
+      "streams",
+      "customizacao"
+    ]
+  },
+  {
+    "cmd": "!afk",
+    "name": "afk",
+    "desc": "Define seu status como AFK (Away From Keyboard) no grupo",
+    "category": "grupo",
+    "usage": [
+      "!afk <motivo (opcional)>"
+    ],
+    "module": "AFKCommands.js",
+    "tags": [
+      "afk",
+      "grupo"
+    ]
+  },
+  {
+    "cmd": "!afk-lista",
+    "name": "afk-lista",
+    "desc": "Lista os membros do grupo que estão atualmente AFK",
+    "category": "grupo",
+    "usage": [
+      "!afk-lista"
+    ],
+    "module": "AFKCommands.js",
+    "tags": [
+      "afk-lista",
+      "grupo"
+    ]
+  },
+  {
+    "cmd": "!canal-seguir",
+    "name": "canal-seguir",
+    "desc": "Cadastra um canal do WhatsApp para seguir neste grupo",
+    "category": "canais",
+    "usage": [
+      "!canal-seguir <nome> <link>"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-seguir",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canal-lista",
+    "name": "canal-lista",
+    "desc": "Lista os canais do WhatsApp seguidos neste grupo",
+    "category": "canais",
+    "usage": [
+      "!canal-lista"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-lista",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canal-del",
+    "name": "canal-del",
+    "desc": "Para de seguir um canal do WhatsApp neste grupo",
+    "category": "canais",
+    "usage": [
+      "!canal-del <nome>"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-del",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canal-ver",
+    "name": "canal-ver",
+    "desc": "Exibe as postagens do dia de um canal seguido no grupo",
+    "category": "canais",
+    "usage": [
+      "!canal-ver <nome> [data]"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-ver",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canal-midias",
+    "name": "canal-midias",
+    "desc": "Configura quais tipos de mídias serão capturados do canal",
+    "category": "canais",
+    "usage": [
+      "!canal-midias <nome> [texto,imagem,audio,sticker,video,documento]"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-midias",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canal-rnd",
+    "name": "canal-rnd",
+    "desc": "Envia uma postagem aleatória de um canal seguido",
+    "category": "canais",
+    "usage": [
+      "!canal-rnd <nome> [tipos]"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-rnd",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canal-encaminhar",
+    "name": "canal-encaminhar",
+    "desc": "Ativa ou desativa o encaminhamento de mensagens do canal para o grupo em tempo real",
+    "category": "canais",
+    "usage": [
+      "!canal-encaminhar <nome>"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-encaminhar",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canais-header",
+    "name": "canais-header",
+    "desc": "Ativa ou desativa o envio de cabeçalho (canal/horário) nas mensagens do canal",
+    "category": "canais",
+    "usage": [
+      "!canais-header <nome>"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canais-header",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!canal-aceitarinvite",
+    "name": "canal-aceitarinvite",
+    "desc": "Aceita um convite de administrador para um canal (Newsletter) do WhatsApp",
+    "category": "canais",
+    "usage": [
+      "!canal-aceitarinvite <linkOuJidOuApelido>"
+    ],
+    "module": "CanaisCommands.js",
+    "tags": [
+      "canal-aceitarinvite",
+      "canais"
+    ]
+  },
+  {
+    "cmd": "!eventos",
+    "name": "eventos",
+    "desc": "Mostra os eventos especiais temporários ativos na Ravena",
+    "category": "jogos",
+    "usage": [
+      "!eventos"
+    ],
+    "module": "EventCommands.js",
+    "tags": [
+      "eventos",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!fazenda",
+    "name": "fazenda",
+    "desc": "Visualiza a fazenda atual no Jardim das Sombras e coleta o diário",
+    "category": "jogos",
+    "usage": [
+      "!fazenda [hd]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "fazenda",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-adm",
+    "name": "faz-adm",
+    "desc": "Gera o link de autenticação seguro para o painel Farm Admin",
+    "category": "jogos",
+    "usage": [
+      "!faz-adm"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-adm",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-colheita",
+    "name": "faz-colheita",
+    "desc": "Colhe plantas maduras e limpa canteiros secos",
+    "category": "jogos",
+    "usage": [
+      "!faz-colheita [número do canteiro] [hd]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-colheita",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-colher",
+    "name": "faz-colher",
+    "desc": "Colhe plantas maduras e limpa canteiros secos",
+    "category": "jogos",
+    "usage": [
+      "!faz-colher [número do canteiro] [hd]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-colher",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-plantar",
+    "name": "faz-plantar",
+    "desc": "Planta sementes em canteiro específico ou em todos os canteiros livres",
+    "category": "jogos",
+    "usage": [
+      "!faz-plantar <semente> [canteiro ou qtd] [hd]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-plantar",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-loja",
+    "name": "faz-loja",
+    "desc": "Visualiza catálogo de sementes, elixires e decorações",
+    "category": "jogos",
+    "usage": [
+      "!faz-loja"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-loja",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-comprar",
+    "name": "faz-comprar",
+    "desc": "Compra sementes, elixires ou decorações da loja",
+    "category": "jogos",
+    "usage": [
+      "!faz-comprar <item> [quantidade]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-comprar",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-inventario",
+    "name": "faz-inventario",
+    "desc": "Exibe a mochila de itens, sementes e bônus acumulados",
+    "category": "jogos",
+    "usage": [
+      "!faz-inventario"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-inventario",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-usar",
+    "name": "faz-usar",
+    "desc": "Utiliza um elixir ou consumível do inventário",
+    "category": "jogos",
+    "usage": [
+      "!faz-usar <elixir> [canteiro]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-usar",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-vender",
+    "name": "faz-vender",
+    "desc": "Vende colheitas do inventário por moedas",
+    "category": "jogos",
+    "usage": [
+      "!faz-vender [item ou tudo]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-vender",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-decorar",
+    "name": "faz-decorar",
+    "desc": "Posiciona ou reposiciona itens decorativos no terreno da fazenda",
+    "category": "jogos",
+    "usage": [
+      "!faz-decorar <enfeite> [slot ou com imagem marcada]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-decorar",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-ranking",
+    "name": "faz-ranking",
+    "desc": "Exibe os rankings de riqueza ou mestres da colheita",
+    "category": "jogos",
+    "usage": [
+      "!faz-ranking [riqueza|colheitas]"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-ranking",
+      "jogos"
+    ]
+  },
+  {
+    "cmd": "!faz-ajuda",
+    "name": "faz-ajuda",
+    "desc": "Exibe guia de comandos e mecânicas do Jardim das Sombras",
+    "category": "jogos",
+    "usage": [
+      "!faz-ajuda"
+    ],
+    "module": "FazendaCommands.js",
+    "tags": [
+      "faz-ajuda",
+      "jogos"
+    ]
+  }
+]

@@ -27,7 +27,11 @@ export LAYA_MAX_LOADED="1"
 export LAYA_PRELOAD_MODELS="multilingual"
 export LAYA_DEFAULT_MODEL="multilingual"
 export LAYA_API_DEFAULT_MODEL="ravena-bgem3"
-export LAYA_BGEM3_PATH="/opt/models/ravena-bgem3"
+if [ -d "/opt/models/ravena-bgem3" ]; then
+    export LAYA_BGEM3_PATH="/opt/models/ravena-bgem3"
+else
+    export LAYA_BGEM3_PATH="moothz/ravena-bgem3"
+fi
 export LAYA_ENABLE_VISION="1"
 
 # Diretório de cache dos modelos Hugging Face

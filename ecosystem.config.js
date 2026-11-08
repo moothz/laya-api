@@ -24,7 +24,7 @@ module.exports = {
       max_restarts: 10,
       restart_delay: 2000,
       env: {
-        PORT: 8005,
+        PORT: 8002,
         WORKERS: 4,
         NODE_ENV: "production"
       }
